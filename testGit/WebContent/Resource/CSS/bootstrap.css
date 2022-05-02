@@ -7689,6 +7689,7 @@ fieldset:disabled .btn {
 	width : 200px;
 	height : 600px;
 	float : left;
+	margin-top : 20px;
   -ms-flex-direction: column !important;
   flex-direction: column !important;
 }
@@ -11969,6 +11970,8 @@ fieldset:disabled .btn {
 }
 
 .breadcrumb {
+	margin-left : 220px;
+	margin-top : 20px;
   background-color: #d9e3f1;
   border: none;
   box-shadow: 5px 5px 10px rgba(55, 94, 148, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.4);
