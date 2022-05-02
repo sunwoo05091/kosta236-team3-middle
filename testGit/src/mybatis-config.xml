@@ -17,6 +17,7 @@
 	</environments>
 	
 	<mappers>
+		<mapper resource="testgit/mapper/TestGit.xml"/>
 	</mappers>
 	
 </configuration>

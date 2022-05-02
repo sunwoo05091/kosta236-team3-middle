@@ -1,4 +1,4 @@
-package test.model;
+package test.domain;
 
 public class hmtest {
 
