@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="kosta.domain.Community" alias="Community"/>
+		<typeAlias type="kosta.domain.Reply" alias="Reply"/>
+		<typeAlias type="kosta.domain.Search" alias="Search"/>
+		<typeAlias type="kosta.domain.Emp" alias = "Emp"/>
+		<typeAlias type="kosta.domain.Login" alias = "Login"/>
+	</typeAliases>
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+			<dataSource type="JNDI">
+				<property name="data_source" value="java:comp/env/jdbc/oracle"/>
+			</dataSource>
+		</environment>		
+	</environments>
+	
+	<mappers>
+		<mapper resource="kosta/mapper/Community.xml"/>
+		<mapper resource = "kosta/mapper/Login.xml"/>
+	</mappers>
+	
+</configuration>
