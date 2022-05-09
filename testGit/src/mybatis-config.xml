@@ -5,6 +5,9 @@
 
 <configuration>
 	<typeAliases>
+		<typeAlias type="kosta.domain.Community" alias="Community"/>
+		<typeAlias type="kosta.domain.Reply" alias="Reply"/>
+		<typeAlias type="kosta.domain.Search" alias="Search"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -17,6 +20,7 @@
 	</environments>
 	
 	<mappers>
+		<mapper resource="kosta/mapper/Community.xml"/>
 	</mappers>
 	
 </configuration>
