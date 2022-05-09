@@ -7,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,12 +37,14 @@
     </style>
     <script>
         function deletePhoneBook(frm){
+            frm.method = "post";
             frm.action='/mypage/deletePhoneBook.do';
             frm.submit();
             return true;
         }
 
         function updatePhoneBook(frm){
+            frm.method = "post";
             frm.action='/mypage/updatePhoneBookPage.do';
             frm.submit();
             return true;

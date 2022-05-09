@@ -1,7 +1,7 @@
 package controller;
 
-import action.Action;
-import action.ActionForward;
+import action.MyPage.Action;
+import action.MyPage.ActionForward;
 import action.MyPage.*;
 import action.MyPage.listAnnualLeave;
 
@@ -16,7 +16,6 @@ import java.io.IOException;
 @WebServlet("/mypage/*")
 public class MyPageController extends HttpServlet {
     //request.getMethod() : GET, POST 반환
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println(request.getMethod());
@@ -27,11 +26,10 @@ public class MyPageController extends HttpServlet {
 
         String command = requestURI.substring("/mypage/".length());
 
-        ActionForward actionForward = null;
+        ActionForward actionForward = new ActionForward();
 
         System.out.println("command : " + command);
         Action action = null;
-        actionForward = new ActionForward();
 
         if (command.equals("init")) {
             action = new InitPage();
@@ -61,15 +59,6 @@ public class MyPageController extends HttpServlet {
             }
         }
 
-        if (command.equals("updatePrivateInfo.do")) {
-            action = new UpdatePrivateInfo();
-            try {
-                actionForward = action.execute(request, response);
-            }catch(Exception e){
-                e.printStackTrace();
-            }
-        }
-
         if (command.equals("attendance")) {
             action = new ListAttendance();
             System.out.println("attendance");
@@ -89,50 +78,14 @@ public class MyPageController extends HttpServlet {
             }
         }
 
-        if (command.equals("insertAnnualLeavePage.do")){
+        if (command.equals("insertAnnualLeave")) {
             action = new insertAnnualLeavePage();
-            try{
+            try {
                 actionForward = action.execute(request, response);
-            }catch(Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-
-        if (command.equals("insertAnnualLeave.do")){
-            action = new insertAnnualLeave();
-            try{
-                actionForward = action.execute(request, response);
-            }catch(Exception e){
-                e.printStackTrace();
-            }
-        }
-
-        if (command.equals("referAnnualLeave.do")){
-            action = new ReferAnnualLeave();
-            try{
-                actionForward = action.execute(request, response);
-            }catch(Exception e){
-                e.printStackTrace();
-            }
-        }
-
-        if (command.equals("acknowledgeAnnualLeave.do")){
-            action = new AcknowledgeAnnualLeave();
-            try{
-                actionForward = action.execute(request, response);
-            }catch(Exception e){
-                e.printStackTrace();
-            }
-        }
-            if (command.equals("onProgressAnnualLeave.do")){
-                action = new OnProgressAnnualLeave();
-                try{
-                    actionForward = action.execute(request, response);
-                }catch(Exception e){
-                    e.printStackTrace();
-                }
-            }
-
 
         if (command.equals("paystub")) {
             action = new ListPayStub();
@@ -171,6 +124,91 @@ public class MyPageController extends HttpServlet {
             }
         }
 
+        if (!actionForward.isRedirect()) {
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher(actionForward.getPath());
+            requestDispatcher.forward(request, response);
+        } else {
+            response.sendRedirect(actionForward.getPath());
+        }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println(request.getMethod());
+        String requestURI = request.getRequestURI();
+        String contextPath = request.getContextPath();
+        System.out.println("requestURI : " + requestURI);
+        System.out.println("contextPath : " + contextPath);
+
+        String command = requestURI.substring("/mypage/".length());
+
+        ActionForward actionForward = new ActionForward();
+
+        System.out.println("command : " + command);
+        Action action = null;
+
+        if (command.equals("updatePrivateInfo.do")) {
+            action = new UpdatePrivateInfo();
+            try {
+                actionForward = action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (command.equals("annual-leave")) {
+            action = new listAnnualLeave();
+            try {
+                actionForward = action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (command.equals("insertAnnualLeave.do")) {
+            action = new insertAnnualLeave();
+            try {
+                actionForward = action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (command.equals("referAnnualLeave.do")) {
+            action = new ReferAnnualLeave();
+            try {
+                actionForward = action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (command.equals("acknowledgeAnnualLeave.do")) {
+            action = new AcknowledgeAnnualLeave();
+            try {
+                actionForward = action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if (command.equals("onProgressAnnualLeave.do")) {
+            action = new OnProgressAnnualLeave();
+            try {
+                actionForward = action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (command.equals("phonebook")) {
+            action = new ListPhoneBook();
+            try {
+                actionForward = action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
         if (command.equals("insertPhoneBook.do")) {
             action = new InsertPhoneBook();
             try {
@@ -198,11 +236,11 @@ public class MyPageController extends HttpServlet {
             }
         }
 
-        if (command.equals("deletePhoneBook.do")){
+        if (command.equals("deletePhoneBook.do")) {
             action = new deletePhoneBook();
-            try{
+            try {
                 actionForward = action.execute(request, response);
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -210,14 +248,9 @@ public class MyPageController extends HttpServlet {
         if (!actionForward.isRedirect()) {
             RequestDispatcher requestDispatcher = request.getRequestDispatcher(actionForward.getPath());
             requestDispatcher.forward(request, response);
-        }
-        else{
+        } else {
             response.sendRedirect(actionForward.getPath());
         }
     }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println(req.getMethod());
-    }
 }
+
