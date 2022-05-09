@@ -139,11 +139,10 @@
 
 
 <form class="form-parent"
-      method="get" action="/mypage/insertAnnualLeave.do">
+      method="post" action="/mypage/insertAnnualLeave.do">
     <fieldset>
         <legend>연차 신청</legend>
         <div class="form-group">
-            <input type="hidden" name="an_acknowledge" value="처리중"/>
             <label for="an_distinct" class="col-sm-2 col-form-label">휴가 명</label>
             <select class="form-select" id="an_distinct"
                     style="width:340px" name="an_distinct"
@@ -192,21 +191,6 @@
                 </div>
             </div>
         </div>
-
-<%--        <div class="form-group">--%>
-<%--            <label for="staticAn_startDate" class="col-sm-2 col-form-label">시작 일</label>--%>
-<%--            <div class="col-sm-10">--%>
-<%--                <input type="text" class="form-control" id="staticAn_startDate"--%>
-<%--                       name="an_startDate">--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--        <div class="form-group row">--%>
-<%--            <label for="staticAn_endDate" class="col-sm-2 col-form-label">종료 일</label>--%>
-<%--            <div class="col-sm-10">--%>
-<%--                <input type="text" class="form-control" id="staticAn_endDate"--%>
-<%--                       name="an_endDate">--%>
-<%--            </div>--%>
-<%--        </div>--%>
         <div class="d-grid gap-2">
             <button class="btn btn-lg btn-primary" type="submit">저장</button>
         </div>

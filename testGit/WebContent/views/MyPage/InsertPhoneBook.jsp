@@ -1,8 +1,9 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="EUC-KR">
+    <meta charset="utf-8">
     <title>Insert title here</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="/Resource/CSS/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="/Resource/CSS/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="/Resource/CSS/bootstrap_modify.css" type="text/css">
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -79,7 +81,7 @@
 
 
 <form class="form-parent"
-      method="get" action="/mypage/insertPhoneBook.do">
+      method="post" action="/mypage/insertPhoneBook.do">
     <fieldset>
         <legend>주소록 추가</legend>
         <div class="form-group row">

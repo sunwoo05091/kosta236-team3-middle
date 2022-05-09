@@ -51,12 +51,15 @@ public class MyPage_AnnualLeave implements Serializable {
 
     public void setInnerData(HttpServletRequest request) {
         int userNo = (int) request.getSession().getAttribute("userNo");
-        int an_no = Integer.parseInt(request.getParameter("an_no"));
+        int an_no = 0;
+        if (request.getParameter("an_no") != null){
+           an_no = Integer.parseInt(request.getParameter("an_no"));
+        }
         int an_distinct = Integer.parseInt(request.getParameter("an_distinct"));
         double an_deduction = Double.parseDouble(request.getParameter("an_deduction"));
         String an_startDate = request.getParameter("an_startDate").substring(6, 10) + "/" + request.getParameter("an_startDate").substring(0, 5);
         String an_endDate = request.getParameter("an_endDate").substring(6, 10) + "/" + request.getParameter("an_endDate").substring(0, 5);
-        String an_acknowledge = request.getParameter("an_acknowledge");
+        String an_acknowledge = "처리중";
 
         this.e_no = userNo;
         this.an_no = an_no;

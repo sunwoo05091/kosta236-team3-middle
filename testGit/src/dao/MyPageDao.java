@@ -261,6 +261,7 @@ public class MyPageDao {
         SqlSession sqlSession = getSqlSessionFactory().openSession();
         int result = -1;
         try {
+            System.out.println("update in dao : " + phoneBook.getPb_Email());
             result = sqlSession.getMapper(Mapper.class).updatePhoneBook(phoneBook);
             if (result > 0)
                 sqlSession.commit();

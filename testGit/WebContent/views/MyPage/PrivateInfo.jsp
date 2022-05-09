@@ -79,7 +79,7 @@
 
 
 <form class="form-parent"
-method="get" action="/mypage/updatePrivateInfo.do">
+method="post" action="/mypage/updatePrivateInfo.do">
     <fieldset>
         <legend>개인 정보</legend>
         <div class="form-group row">

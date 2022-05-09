@@ -36,18 +36,21 @@
     </style>
     <script>
         function referAnnualLeave(frm) {
+            frm.method = "post";
             frm.action = '/mypage/referAnnualLeave.do';
             frm.submit();
             return true;
         }
 
         function acknowledgeAnnualLeave(frm) {
+            frm.method = "post";
             frm.action = '/mypage/acknowledgeAnnualLeave.do';
             frm.submit();
             return true;
         }
 
         function onProgressAnnualLeave(frm){
+            frm.method = "post";
             frm.action = '/mypage/onProgressAnnualLeave.do';
             frm.submit();
             return true;
@@ -117,7 +120,7 @@
     <li class="breadcrumb-item"><a href="/mypage/annual-leave">연차 기록</a></li>
 </ol>
 
-<a class="badge rounded-pill bg-primary add" href="/mypage/insertAnnualLeavePage.do">추가</a>
+<a class="badge rounded-pill bg-primary add" href="/mypage/insertAnnualLeave">추가</a>
 <ul>
     <table class="table table-hover">
         <thead>

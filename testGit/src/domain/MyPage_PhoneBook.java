@@ -2,6 +2,7 @@ package domain;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
 
 public class MyPage_PhoneBook implements Serializable {
     int pb_No;
@@ -71,7 +72,8 @@ public class MyPage_PhoneBook implements Serializable {
         this.pb_Email = pb_Email;
     }
 
-    public void setInnerData(HttpServletRequest request) {
+    public void setInnerData(HttpServletRequest request) throws UnsupportedEncodingException {
+        request.setCharacterEncoding("utf-8");
         int userNo = (int)request.getSession().getAttribute("userNo");
         String pb_Cpn = request.getParameter("pb_Cpn");
         String pb_Name = request.getParameter("pb_Name");
