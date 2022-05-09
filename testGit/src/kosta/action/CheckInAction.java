@@ -5,14 +5,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import kosta.service.LoginService;
 
-public class InsertEmpAction implements Action {
+public class CheckInAction implements Action{
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		LoginService service = LoginService.getInstance();
 		ActionForward forward = new ActionForward();
 		
-		int re = service.insertEmpService(request);
+		int re = service.checkInService(request);
 		if(re == 0) {
 			forward.setPath("insertEmpFormAction.do?check=1");
 			forward.setRedirect(true);
@@ -23,5 +23,4 @@ public class InsertEmpAction implements Action {
 		return forward;
 		
 	}
-
 }

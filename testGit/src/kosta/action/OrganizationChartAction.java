@@ -5,18 +5,19 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import kosta.domain.Emp;
-import kosta.service.LoginService;
 
-public class MainAction implements Action {
+public class OrganizationChartAction implements Action{
+
+	public OrganizationChartAction() {}
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		LoginService service = LoginService.getInstance();
 		ActionForward forward = new ActionForward();
 		HttpSession session = request.getSession();
+		
 		Emp emp = (Emp)session.getAttribute("emp");
-		request.setAttribute("emp", emp);
 		int d_no = emp.getD_no();
+		
 		String d_name = null;
 
 		switch (d_no) {
@@ -39,9 +40,8 @@ public class MainAction implements Action {
 		request.setAttribute("d_name", d_name);
 		
 		forward.setRedirect(false);
-		forward.setPath("/main.jsp");
+		forward.setPath("/organization_chart.jsp");
 		
 		return forward;
 	}
-
 }
