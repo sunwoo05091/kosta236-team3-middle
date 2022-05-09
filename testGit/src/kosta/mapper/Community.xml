@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="kosta.mapper.CommunityMapper">
+	<cache />
+		
+	
+	
+    <select id="listCommunity" parameterType="Search" resultType="Community">
+		select * from community
+ 		 <if test="area != null">
+			<where>
+				<foreach collection="area" item="item" separator="OR" open="(" close=")">
+					${item} LIKE #{searchKey}
+				</foreach> 
+				and cm_state = '중고거래'
+			</where>
+		 </if>  
+		 <where>
+			 <if test="area == null">
+			 		 cm_state = '중고거래'
+			 </if>
+		 </where>
+		 order by cm_no desc
+	</select>
+	
+	<insert id="insertCommunityTrade" parameterType="Community">
+		insert into community (
+			cm_no, cm_price, cm_contents, cm_date, cm_title, cm_hitcount, cm_state, cm_fname, cm_fin, e_no
+		)values(
+			cm_no_seq.nextval, #{cm_price}, #{cm_contents}, sysdate, #{cm_title}, 0, '중고거래', #{cm_fname}, 1, 1 
+		)
+	</insert>
+	
+	<select id="detailCommunityTrade" resultType="Community" parameterType="int">
+		select * from community where cm_no=#{cm_no}	
+	</select>
+	
+	<update id="updateCommunityTrade" parameterType="Community">
+		update community set cm_price=#{cm_price}, cm_contents=#{cm_contents}, cm_title=#{cm_title} where cm_no=#{cm_no}
+	</update>
+	
+	<delete id="deleteCommunityTrade" parameterType="int">
+		delete from community where cm_no=#{cm_no}
+	</delete>
+	
+	<insert id="insertReply" parameterType="Reply">
+		insert into reply
+			values(r_no_seq.nextval, #{cm_r_contents}, sysdate, 1, #{cm_no})
+	</insert>
+	
+	<select id="listReply" parameterType="int" resultType="Reply">
+		select * from reply where cm_no = #{cm_no}
+	</select>
+	
+	<select id="countBoard" resultType="int">
+	select count(*) from community
+		<if test="area != null">
+			<where>
+				<!-- where (title LIKE %JSP% OR writer LIKE %JSP%) -->
+				<foreach collection="area" item="item" separator="OR" open="(" close=")">
+					${item} LIKE #{searchKey}
+				</foreach> 
+			</where>
+		  </if>
+	</select>
+	
+	 <select id="listCommunityClub" parameterType="Search" resultType="Community">
+		select * from community
+ 		 <if test="area != null">
+			<where>
+				<foreach collection="area" item="item" separator="OR" open="(" close=")">
+					${item} LIKE #{searchKey}
+				</foreach> 
+				and cm_state = '동아리'
+			</where>
+		 </if>
+		 	<where>
+				<if test="area == null">
+				 	 cm_state = '동아리'
+				</if>
+		     </where>
+		 order by cm_no desc  
+	</select>
+	
+	<insert id="insertCommunityClub" parameterType="Community">
+		insert into community (
+			cm_no, cm_price, cm_contents, cm_date, cm_title, cm_hitcount, cm_state, cm_fname, cm_fin, e_no
+		)values(
+			cm_no_seq.nextval, #{cm_price}, #{cm_contents}, sysdate, #{cm_title}, 0, '동아리', #{cm_fname}, 1, 1 
+		)
+	</insert>
+	
+	<select id="listCommunityCarfull" parameterType="Search" resultType="Community">
+		select * from community
+ 		 <if test="area != null">
+			<where>
+				<foreach collection="area" item="item" separator="OR" open="(" close=")">
+					${item} LIKE #{searchKey}
+				</foreach> 
+				and cm_state = '카풀'
+			</where>
+		 </if>
+		 	<where>
+				<if test="area == null">
+				 	 cm_state = '카풀'
+				</if>
+		     </where>
+		 order by cm_no desc  
+	</select>
+	
+	<insert id="insertCommunityCarfull" parameterType="Community">
+		insert into community (
+			cm_no, cm_price, cm_contents, cm_date, cm_title, cm_hitcount, cm_state, cm_fin, e_no
+		)values(
+			cm_no_seq.nextval, #{cm_price}, #{cm_contents}, sysdate, #{cm_title}, 0, '카풀', 1, 1 
+		)
+	</insert>
+	
+	<select id="noticeCommunity" resultType="Community">
+		select * from community where cm_fin = 0
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
