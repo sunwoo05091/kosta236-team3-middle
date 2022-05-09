@@ -8,6 +8,8 @@
 		<typeAlias type="kosta.domain.Community" alias="Community"/>
 		<typeAlias type="kosta.domain.Reply" alias="Reply"/>
 		<typeAlias type="kosta.domain.Search" alias="Search"/>
+		<typeAlias type="kosta.domain.Emp" alias = "Emp"/>
+		<typeAlias type="kosta.domain.Login" alias = "Login"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -21,6 +23,7 @@
 	
 	<mappers>
 		<mapper resource="kosta/mapper/Community.xml"/>
+		<mapper resource = "kosta/mapper/Login.xml"/>
 	</mappers>
 	
 </configuration>
