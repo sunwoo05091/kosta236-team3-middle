@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kosta.action.Action;
-import kosta.action.ActionForward;
+import kosta.action.ScheduleAction;
+import kosta.action.ScheduleActionForward;
 import kosta.action.DeleteScheduleAction;
 import kosta.action.MainScheduleAction;
 import kosta.action.MoveUpdateAction;
@@ -36,8 +36,8 @@ public class ScheduleController extends HttpServlet {
     	String command = path.substring(contextPath.length()+10);
     	System.out.println(command);
     	
-    	Action action = null;
-    	ActionForward forward = null;
+    	ScheduleAction action = null;
+    	ScheduleActionForward forward = null;
     	
     	
     	if(command.equals("insertAction.do")) {

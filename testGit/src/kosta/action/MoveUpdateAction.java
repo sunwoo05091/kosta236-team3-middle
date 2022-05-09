@@ -6,11 +6,11 @@ import javax.servlet.http.HttpServletResponse;
 import kosta.domain.Schedule;
 import kosta.service.ScheduleService;
 
-public class MoveUpdateAction implements Action{
+public class MoveUpdateAction implements ScheduleAction{
 
 	@Override
-	public ActionForward excute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		ActionForward forward = new ActionForward();
+	public ScheduleActionForward excute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ScheduleActionForward forward = new ScheduleActionForward();
 		ScheduleService service = ScheduleService.getInstance();
 		
 		int s_no = Integer.parseInt(request.getParameter("s_no"));

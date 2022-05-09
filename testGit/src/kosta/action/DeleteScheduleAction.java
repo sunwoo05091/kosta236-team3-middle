@@ -6,11 +6,11 @@ import javax.servlet.http.HttpServletResponse;
 import kosta.domain.Schedule;
 import kosta.service.ScheduleService;
 
-public class DeleteScheduleAction implements Action{
+public class DeleteScheduleAction implements ScheduleAction{
 
 	@Override
-	public ActionForward excute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		ActionForward forward = new ActionForward();
+	public ScheduleActionForward excute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ScheduleActionForward forward = new ScheduleActionForward();
 		ScheduleService service = ScheduleService.getInstance();
 		
 		service.deleteSchedule(request);

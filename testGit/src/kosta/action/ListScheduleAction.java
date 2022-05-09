@@ -9,10 +9,10 @@ import kosta.domain.Schedule;
 import kosta.domain.ScheduleListModel;
 import kosta.service.ScheduleService;
 
-public class ListScheduleAction implements Action{
+public class ListScheduleAction implements ScheduleAction{
 	@Override
-	public ActionForward excute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		ActionForward forward = new ActionForward();
+	public ScheduleActionForward excute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ScheduleActionForward forward = new ScheduleActionForward();
 		ScheduleService service = ScheduleService.getInstance();
 		
 		ScheduleListModel schedule = service.listSchedule(request);

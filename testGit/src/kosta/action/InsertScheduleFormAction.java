@@ -3,11 +3,11 @@ package kosta.action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class InsertScheduleFormAction implements Action {
+public class InsertScheduleFormAction implements ScheduleAction {
 
 	@Override
-	public ActionForward excute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		ActionForward forward = new ActionForward();
+	public ScheduleActionForward excute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ScheduleActionForward forward = new ScheduleActionForward();
 		forward.setRedirect(false);
 		forward.setPath("/insertForm.jsp");
 		

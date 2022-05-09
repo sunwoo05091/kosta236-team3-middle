@@ -1,10 +1,10 @@
 package kosta.action;
 
-public class ActionForward {
+public class ScheduleActionForward {
 	private String path;
 	private boolean isRedirect;
 	
-	public ActionForward(){}
+	public ScheduleActionForward(){}
 
 	public String getPath() {
 		return path;

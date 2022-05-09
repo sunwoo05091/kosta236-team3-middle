@@ -5,11 +5,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import kosta.service.ScheduleService;
 
-public class InsertScheduleAction implements Action {
+public class InsertScheduleAction implements ScheduleAction {
 
 	@Override
-	public ActionForward excute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		ActionForward forward = new ActionForward();
+	public ScheduleActionForward excute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ScheduleActionForward forward = new ScheduleActionForward();
 		ScheduleService service = ScheduleService.getInstance();
 
 		service.insertSchedule(request);
