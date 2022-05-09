@@ -13,9 +13,9 @@
 	
 	<insert id = "insertEmp" parameterType = "Emp">
 		insert into emp(
-			e_no, id, pass, name, phone_number
+			e_no, id, pass, name, phone_number, signupcheck
 		) values(
-			#{e_no}, #{id}, #{pass}, #{name}, #{phone_number}
+			#{e_no}, #{id}, #{pass}, #{name}, #{phone_number}, 0
 		)
 	</insert>
 	
@@ -23,6 +23,34 @@
 		select count(*) from emp
 		where id = #{id}
 	</select>
+	
+	<select id = "listSignUpApprove" resultType="Emp">
+		select * from emp
+		where signupcheck = 0 
+	</select>
+	
+	<select id = "listEmp" parameterType="int" resultType="Emp">
+		select * from emp
+		where d_no = #{d_no}
+	</select>
+	
+	<update id = "updateEmp" parameterType = "Emp">
+		update emp set hiredate = #{hiredate}, basepay= #{basepay}, d_no = #{d_no}, grade = #{grade}, signupcheck = #{signupcheck} 
+		where e_no = #{e_no}	
+	</update>
+	
+	<insert id = "checkIn" parameterType = "int">
+		insert into attendance(
+			a_no, e_no, a_date, a_checkin
+		) values(
+			a_no_seq.nextval, #{e_no}, to_date(sysdate,'YYYY-MM-DD'), to_char(sysdate,'HH24:MI')
+		)
+	</insert>
+	
+ 	<update id = "checkOut" parameterType = "int">
+		update attendance set a_checkout = to_char(sysdate,'HH24:MI')
+		where e_no = #{e_no} and a_date = to_date(sysdate,'YYYY-MM-DD')
+	</update>
 	
 	<!-- <insert id = "insertBoard" parameterType="Board">
 		insert into board(
@@ -50,9 +78,6 @@
 		select * from board where seq = #{seq} order by seq desc
 	</select>
 	
-	<update id = "updateBoard" parameterType = "Board">
-		update board set title = #{title}, contents= #{contents}, fname = #{fname} where seq = #{seq}	
-	</update>
 	
 	<delete id = "deleteBoard" parameterType = "int">
 		delete from board where seq = #{seq}

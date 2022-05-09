@@ -11,17 +11,24 @@ import javax.servlet.http.HttpServletResponse;
 
 import kosta.action.Action;
 import kosta.action.ActionForward;
+import kosta.action.CheckInAction;
+import kosta.action.CheckOutAction;
 import kosta.action.InsertEmpAction;
 import kosta.action.InsertEmpFormAction;
+import kosta.action.ListOrganizationChartAction;
+import kosta.action.ListSignUpApproveAction;
+import kosta.action.LogOutAction;
 import kosta.action.LoginAction;
 import kosta.action.LoginFormAction;
 import kosta.action.MainAction;
+import kosta.action.OrganizationChartAction;
+import kosta.action.UpdateEmpAction;
 
 @WebServlet("/Login/*")
-public class Mycontroller extends HttpServlet {
+public class Logincontroller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public Mycontroller() {
+    public Logincontroller() {
         super();
     }
 
@@ -72,29 +79,57 @@ public class Mycontroller extends HttpServlet {
 	    		e.printStackTrace();
 	    	}
 	    	
-//	    }else if(command2.equals("updateAction.do")) {
-//	    	action = new UpdateAction();
-//	    	try {
-//	    		forward = action.execute(request, response);
-//	    	} catch (Exception e) {
-//	    		e.printStackTrace();
-//	    	}
-//	    	
-//	    }else if(command2.equals("deleteAction.do")) {
-//	    	action = new DeleteAction();
-//	    	try {
-//	    		forward = action.execute(request, response);
-//	    	} catch (Exception e) {
-//	    		e.printStackTrace();
-//	    	}
-//	    	
-//	    }else if(command2.equals("insertReplyAction.do")) {
-//	    	action = new insertReplyAction();
-//	    	try {
-//	    		forward = action.execute(request, response);
-//	    	} catch (Exception e) {
-//	    		e.printStackTrace();
-//	    	}
+	    }else if(command2.equals("listSignUpApproveAction.do")) {
+	    	action = new ListSignUpApproveAction();
+	    	try {
+	    		forward = action.execute(request, response);
+	    	} catch (Exception e) {
+	    		e.printStackTrace();
+	    	}
+	    	
+	    }else if(command2.equals("updateEmpAction.do")) {
+	    	action = new UpdateEmpAction();
+	    	try {
+	    		forward = action.execute(request, response);
+	    	} catch (Exception e) {
+	    		e.printStackTrace();
+	    	}
+	    	
+	    }else if(command2.equals("checkInAction.do")) {
+	    	action = new CheckInAction();
+	    	try {
+	    		forward = action.execute(request, response);
+	    	} catch (Exception e) {
+	    		e.printStackTrace();
+	    	}
+	    }else if(command2.equals("checkOutAction.do")) {
+	    	action = new CheckOutAction();
+	    	try {
+	    		forward = action.execute(request, response);
+	    	} catch (Exception e) {
+	    		e.printStackTrace();
+	    	}
+	    }else if(command2.equals("logOutAction.do")) {
+	    	action = new LogOutAction();
+	    	try {
+	    		forward = action.execute(request, response);
+	    	} catch (Exception e) {
+	    		e.printStackTrace();
+	    	}
+	    }else if(command2.equals("organizationChartAction.do")) {
+	    	action = new OrganizationChartAction();
+	    	try {
+	    		forward = action.execute(request, response);
+	    	} catch (Exception e) {
+	    		e.printStackTrace();
+	    	}
+	    }else if(command2.equals("listOrganizationChartAction.do")) {
+	    	action = new ListOrganizationChartAction();
+	    	try {
+	    		forward = action.execute(request, response);
+	    	} catch (Exception e) {
+	    		e.printStackTrace();
+	    	}
 	    }
     	if (forward != null) {
     		if(forward.isRedirect()) {//rediect

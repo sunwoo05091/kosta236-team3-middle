@@ -1,5 +1,7 @@
 package kosta.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -45,6 +47,65 @@ public class LoginService {
 			
 			return dao.insertEmp(emp);
 		}
+	}
+
+	public Emp mainService(HttpServletRequest request) throws Exception {
+		request.setCharacterEncoding("utf-8");
+		HttpSession session = request.getSession();
+		System.out.println(session.getAttribute("log"));
+		return null;
+	}
+
+	public List<Emp> listSignUpApproveAction() {
+		return dao.listSignUpApprove();
+	}
+
+	public int updateEmpService(HttpServletRequest request) throws Exception {
+		request.setCharacterEncoding("utf-8");
+		Emp emp = new Emp();
+		System.out.println(request.getParameter("e_no"));
+		emp.setE_no(Integer.parseInt(request.getParameter("e_no")));
+		emp.setHiredate(request.getParameter("hiredate"));
+		emp.setBasepay(Integer.parseInt(request.getParameter("basepay")));
+		int d_no = 0;
+		switch (request.getParameter("dep")) {
+		case "인사":
+			d_no = 1;
+			break;
+		case "영업":
+			d_no = 2;
+			break;
+		case "개발":
+			d_no = 3;
+			break;
+		case "입원":
+			d_no = 4;
+			break;
+		case "총무":
+			d_no = 5;
+			break;
+		}
+		emp.setD_no(d_no);
+		emp.setGrade(request.getParameter("grade"));
+		emp.setSignupcheck(1);
+		
+		return dao.updateEmp(emp);
+	}
+
+	public int checkInService(HttpServletRequest request) throws Exception{
+		request.setCharacterEncoding("utf-8");
+		int e_no = Integer.parseInt(request.getParameter("e_no")); 
+		return dao.checkIn(e_no);
+	}
+
+	public int checkOutService(HttpServletRequest request) throws Exception{
+		request.setCharacterEncoding("utf-8");
+		int e_no = Integer.parseInt(request.getParameter("e_no"));
+		return dao.checkOut(e_no);
+	}
+
+	public List<Emp> listEmpService(int d_no) {
+		return dao.listEmp(d_no);
 	}
 	
 //	public int insertBoardService(HttpServletRequest request) throws Exception{

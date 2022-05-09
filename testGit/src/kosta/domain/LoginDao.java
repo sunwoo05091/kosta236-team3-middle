@@ -83,6 +83,96 @@ public class LoginDao {
 		}
 		return check;
 	}
+
+	public List<Emp> listSignUpApprove() {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		List<Emp> list = null;
+		try {
+			list = sqlSession.getMapper(EmpMapper.class).listSignUpApprove();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(sqlSession!=null) {
+				sqlSession.close();
+			}
+		}
+		return list;
+	}
+
+	public int updateEmp(Emp emp) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = sqlSession.getMapper(EmpMapper.class).updateEmp(emp);
+			if(re > 0) {	//트랜잭션처리 insert update delete 필수
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			} 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return re;
+	}
+
+	public int checkIn(int e_no) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = sqlSession.getMapper(EmpMapper.class).checkIn(e_no);
+			if(re > 0) {	//트랜잭션처리 insert update delete 필수
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			} 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return re;
+	}
+
+	public int checkOut(int e_no) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = sqlSession.getMapper(EmpMapper.class).checkOut(e_no);
+			if(re > 0) {	//트랜잭션처리 insert update delete 필수
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			} 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return re;
+	}
+
+	public List<Emp> listEmp(int d_no) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		List<Emp> list = null;
+		try {
+			list = sqlSession.getMapper(EmpMapper.class).listEmp(d_no);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(sqlSession!=null) {
+				sqlSession.close();
+			}
+		}
+		return list;
+	}
 	
 //	public List<Board> listBoard(int startRow, Search search){ 
 //		SqlSession sqlSession = getSqlSessionFactory().openSession();

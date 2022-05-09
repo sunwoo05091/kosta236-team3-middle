@@ -14,12 +14,12 @@ public class Emp implements Serializable{
 	private int c_no;
 	private int d_no;
 	private String grade;
-	private boolean signupcheck;
+	private int signupcheck;
 	
 	public Emp() {}
 
 	public Emp(int e_no, String id, String pass, String name, String phone_number, String hiredate, String sign,
-			int basepay, int c_no, int d_no, String grade) {
+			int basepay, int c_no, int d_no, String grade, int signupcheck) {
 		super();
 		this.e_no = e_no;
 		this.id = id;
@@ -32,6 +32,15 @@ public class Emp implements Serializable{
 		this.c_no = c_no;
 		this.d_no = d_no;
 		this.grade = grade;
+		this.signupcheck = signupcheck;
+	}
+
+	public int getSignupcheck() {
+		return signupcheck;
+	}
+
+	public void setSignupcheck(int signupcheck) {
+		this.signupcheck = signupcheck;
 	}
 
 	public int getE_no() {

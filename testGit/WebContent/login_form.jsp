@@ -45,12 +45,17 @@
                                         <button type="submit"
 											class="btn btn-primary" value="로그인">로그인</button>
                                         &nbsp &nbsp &nbsp 
+                                        <c:if test = "${loginfail == 1 }" >
+                                        	<script type="text/javascript">
+                                        	alert ('아이디, 비밀번호 오류입니다.')
+                                        	</script>
+                                        </c:if>
                                          <a href="insertEmpFormAction.do" class="btn btn-primary btn-user btn-block"> 계정생성 </a>
                                         <hr>
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">비밀번호 찾기</a>
+                                        <a class="small" href="#"><p onclick = "alert('관리자에게 문의하세요')">비밀번호 찾기</p></a>
                                     </div>
                                 </div>
                             </div> 
