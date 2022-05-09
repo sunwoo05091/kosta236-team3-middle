@@ -4,7 +4,10 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+
+
 	<typeAliases>
+		<typeAlias type="kosta.domain.Schedule" alias="schedule"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -17,6 +20,7 @@
 	</environments>
 	
 	<mappers>
+		<mapper resource="kosta/mapper/Schedule.xml" />
 	</mappers>
 	
 </configuration>
