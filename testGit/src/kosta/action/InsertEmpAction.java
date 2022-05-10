@@ -12,6 +12,8 @@ public class InsertEmpAction implements Action {
 		LoginService service = LoginService.getInstance();
 		ActionForward forward = new ActionForward();
 		
+		
+		
 		int re = service.insertEmpService(request);
 		if(re == 0) {
 			forward.setPath("insertEmpFormAction.do?check=1");
