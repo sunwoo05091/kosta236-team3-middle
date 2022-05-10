@@ -94,25 +94,14 @@
   </div>
 </nav>
 <ul class="nav nav-pills flex-column">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Active</a>
-  </li>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Separated link</a>
-    </div>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#">Disabled</a>
-  </li>
+	<li><a href="moveSchedule.do"><button type="button" class="btn btn-outline-primary">홈 </button></a></li><br>
+	<li><a href="insertForm.do"><button type="button" class="btn btn-outline-primary">일정 생성</button></a></li><br>
+	<li><a href="listAction.do"><button type="button" class="btn btn-outline-primary">전체 조회</button></a></li>
+	<hr style="border: solid 1px gray;">
+	<li>분류별 일정</li><br>
+	<li><a href="TypeScheduleAction.do?s_type=1">- 개인</a></li><br>
+	<li><a href="TypeScheduleAction.do?s_type=2">- 미팅</a></li><br>
+	<li><a href="TypeScheduleAction.do?s_type=3">- 회의</a></li><br>
 </ul>
 <ol class="breadcrumb">
   <li class="breadcrumb-item"><a href="#">Home</a></li>

@@ -24,7 +24,7 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="mainAction.do">홈
+          <a class="nav-link active" href="/testGit/Login/mainAction.do">홈
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
@@ -41,21 +41,11 @@
           <a class="nav-link" href="/testGit/community/listCommunityAction.do">커뮤니티</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">마이페이지</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
+          <a class="nav-link" href="/views/MyPage/Init.jsp">마이페이지</a>
         </li>
       </ul>
       <form class="d-flex">
-          <a class="nav-link" href="logOutAction.do" id = "logout">로그아웃</a>
+          <a class="nav-link" href="/testGit/Login/logOutAction.do" id = "logout">로그아웃</a>
       </form>
     </div>
   </div>
@@ -69,7 +59,7 @@
     			<text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
   			</svg>
   			<br>
-		    <div class="card-text"><div>${d_name }부서</div><div>${emp.name }님</div></div>
+		    <div class="card-text"><div>${d_name }부서</div><div>${emp.grade } ${emp.name }님</div></div>
 		  </div>
 		</div>
 	</li>

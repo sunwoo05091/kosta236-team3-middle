@@ -128,6 +128,10 @@ public class ScheduleService {
 		schedule.setS_no(Integer.parseInt(request.getParameter("s_no")));
 		schedule.setS_title(request.getParameter("s_title"));
 		schedule.setS_contents(request.getParameter("s_contents"));
+		schedule.setS_startday(request.getParameter("s_startday"));
+		schedule.setS_finishday(request.getParameter("s_finishday"));
+		schedule.setS_type(request.getParameter("s_type"));
+		schedule.setSituation(request.getParameter("situation"));
 		
 		return dao.updateSchedule(schedule);
 	}

@@ -15,7 +15,42 @@
 <link rel = "stylesheet" href="Resource/CSS/bootstrap.min.css" type = "text/css">
 <link rel = "stylesheet" href="Resource/CSS/bootstrap.css" type = "text/css">
 <link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/main.css" type="text/css">
-
+<style type="text/css">
+#a {
+  width: 500px;
+  height: 32px;
+  font-size: 15px;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 10px;
+  background-color: rgb(233, 233, 233);
+}
+  input[type=submit] {
+            background-color:#FF5A5F;
+            color:white;
+            width: 70px;
+            height: 45px;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 6px;
+            border: 0;
+            outline: 0;
+ }
+ #header{
+  border: 1px solid #d2d2d2; 
+  background-color: #d2d2d2; 
+  border-radius: 16px;
+  box-shadow: inset 0 0 8px #d2d2d2;
+  width: 160px; height: 160px;
+ }
+ #text{
+  resize: none;
+  border: none;
+  margin-left: 35px;
+  margin-top: 15px;
+}
+</style>
 </head>
 <body background="ECF1F8">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -67,10 +102,25 @@
 <div id="header" style="border: 1px solid;width: 700px; height: 500px;margin-left: 450px; margin-top: 50px;
 padding-left: 10px;padding-top: 30px">
 <form action="updateAction.do" method="post">
+<input type="submit" value="저장" class="submit" style="margin-left: 600px; margin-bottom: 200px; position: absolute;">
 <input type="hidden" name="s_no" value="${schedule.s_no }">
-	제목 : <input type="text" name="s_title" value="${schedule.s_title }"><br><br>
-	내용 : <textarea rows="6" cols="40" name="s_contents">${schedule.s_contents }</textarea><br><br>
-	<input type="submit" value="수정완료">
+	제목 : <input type="text" name="s_title" value="${schedule.s_title }"style="margin-left: 10px; margin-bottom: 200px; position: absolute;"><br><br>
+	기간 : <input type="date" name="s_startday" style=" border-radius: 10px; border-color:#d2d2d2;"> ~ <input type="date" name="s_finishday" style=" border-radius: 10px;border-color:#d2d2d2;">
+	진행 : <select name="situation">
+			<option>선택</option>
+			<option value="진행">진행중
+			</option>
+			<option value="완료">완료</option>
+			<option value="보류">보류</option>	
+		 </select>
+	종류 : <select name="s_type">
+			<option>선택</option>
+			<option value="개인">개인
+			</option>
+			<option value="미팅">미팅</option>
+			<option value="회의">회의</option>	
+		 </select>
+	<textarea rows="10" cols="70" name="s_contents" id="text">${schedule.s_contents }</textarea><br>
 </form>
 </div>
 </body>
