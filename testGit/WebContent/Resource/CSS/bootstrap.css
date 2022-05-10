@@ -12287,3 +12287,7 @@ fieldset:disabled .btn {
 	height : 200px;
 	font-size:4rem;
 }
+#workcheckbtn{
+	font-size:0.8rem;
+	padding:2px;
+}
