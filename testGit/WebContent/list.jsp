@@ -66,6 +66,7 @@
   </div>
 </nav>
 <ul class="nav nav-pills flex-column" style="position: absolute;" >
+	<li><a href="moveSchedule.do"><button type="button" class="btn btn-outline-primary">홈 </button></a></li><br>
 	<li><a href="insertForm.do"><button type="button" class="btn btn-outline-primary">일정 생성</button></a></li><br>
 	<li><a href="listAction.do"><button type="button" class="btn btn-outline-primary">일정 조회</button></a></li>
 
