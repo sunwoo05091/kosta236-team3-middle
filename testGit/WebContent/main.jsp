@@ -41,7 +41,7 @@
           <a class="nav-link" href="/testGit/community/listCommunityAction.do">커뮤니티</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/views/MyPage/Init.jsp">마이페이지</a>
+          <a class="nav-link" href="#">마이페이지</a>
         </li>
       </ul>
       <form class="d-flex">
