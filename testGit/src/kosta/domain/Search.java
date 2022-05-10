@@ -1,15 +1,11 @@
 package kosta.domain;
 
-import java.util.Arrays;
-
 public class Search {
 	private String[] area;
 	private String searchKey;
 	
-	public Search() {
-		
-	}
-
+	public Search() {}
+	
 	public Search(String[] area, String searchKey) {
 		super();
 		this.area = area;
@@ -31,11 +27,4 @@ public class Search {
 	public void setSearchKey(String searchKey) {
 		this.searchKey = searchKey;
 	}
-
-	@Override
-	public String toString() {
-		return "Search [area=" + Arrays.toString(area) + ", searchKey=" + searchKey + "]";
-	}
-	
-	
 }
