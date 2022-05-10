@@ -15,7 +15,7 @@ public class AcknowledgeAnnualLeave implements Action {
         annualLeave.setInnerData(request);
         annualLeave.setAn_acknowledge("승인");
         myPageService.updateAnnualLeave(annualLeave);
-        actionForward.setPath("/mypage/annual-leave");
+        actionForward.setPath("annual-leave");
 
         return actionForward;
     }

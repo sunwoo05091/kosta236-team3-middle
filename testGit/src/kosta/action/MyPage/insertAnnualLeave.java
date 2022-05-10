@@ -15,7 +15,7 @@ public class insertAnnualLeave implements Action {
         annualLeave.setInnerData(request);
         int result =  myPageService.insertAnnualLeave(annualLeave);
         System.out.println("inserannual-leave result : " + result);
-        actionForward.setPath("/mypage/annual-leave");
+        actionForward.setPath("annual-leave");
 
         return actionForward;
     }

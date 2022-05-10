@@ -4,15 +4,16 @@
 <%
     if (session.getAttribute("userId") == null) {
         System.out.println("userId is empty!");
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/mypage/InitMyPage.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/MyPage/InitMyPage.jsp");
         requestDispatcher.forward(request, response);
         System.out.println("빙글빙글");
     }
     session.setAttribute("exPageURI", request.getRequestURI());
     System.out.println(request.getRequestURI());
+    session.setAttribute("contextPath", request.getContextPath());
 
     if (session.getAttribute("trial") == null || ((boolean) session.getAttribute("trial")) == false) {
-        response.sendRedirect("/mypage/getUserNo.do");
+        response.sendRedirect("/testGit/mypage/getUserNo.do");
     }
     System.out.println("여기있다!");
     session.setAttribute("trial", false);
@@ -61,7 +62,7 @@
                        aria-haspopup="true" aria-expanded="false">Dropdown</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Another kosta.action</a>
                         <a class="dropdown-item" href="#">Something else here</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Separated link</a>
@@ -75,19 +76,19 @@
 <%--data-bs-toggle="tab" --%>
 <ul class="nav nav-pills flex-column">
     <li class="nav-item">
-        <a class="nav-link" href="/mypage/private-info">개인 정보</a>
+        <a class="nav-link" href="${sessionScope.contextPath}/mypage/private-info">개인 정보</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/mypage/attendance">근태 기록</a>
+        <a class="nav-link" href="${sessionScope.contextPath}/mypage/attendance">근태 기록</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/mypage/annual-leave">연차 기록</a>
+        <a class="nav-link" href="${sessionScope.contextPath}/mypage/annual-leave">연차 기록</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/mypage/paystub">급여 명세서</a>
+        <a class="nav-link" href="${sessionScope.contextPath}/mypage/paystub">급여 명세서</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/mypage/phonebook">주소록</a>
+        <a class="nav-link" href="${sessionScope.contextPath}/mypage/phonebook">주소록</a>
     </li>
 </ul>
 </body>

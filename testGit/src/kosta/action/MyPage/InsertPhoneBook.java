@@ -19,7 +19,7 @@ public class InsertPhoneBook implements Action {
 
         int result =  myPageService.insertPhoneBook(phoneBook);
         System.out.println("inserPhoneBook result : " + result);
-        actionForward.setPath("/mypage/phonebook");
+        actionForward.setPath("phonebook");
 
         return actionForward;
     }
