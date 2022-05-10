@@ -43,7 +43,7 @@
                        aria-haspopup="true" aria-expanded="false">Dropdown</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Another kosta.action</a>
                         <a class="dropdown-item" href="#">Something else here</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Separated link</a>
@@ -56,23 +56,23 @@
 
 <ul class="nav nav-pills flex-column">
     <li class="nav-item">
-        <a class="nav-link" href="/mypage/private-info">개인 정보</a>
+        <a class="nav-link" href="${sessionScope.contextPath}/mypage/private-info">개인 정보</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/mypage/attendance">근태 기록</a>
+        <a class="nav-link" href="${sessionScope.contextPath}/mypage/attendance">근태 기록</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/mypage/annual-leave">연차 기록</a>
+        <a class="nav-link" href="${sessionScope.contextPath}/mypage/annual-leave">연차 기록</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link active" href="/mypage/paystub">급여 명세서</a>
+        <a class="nav-link active" href="${sessionScope.contextPath}/mypage/paystub">급여 명세서</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/mypage/phonebook">주소록</a>
+        <a class="nav-link" href="${sessionScope.contextPath}/mypage/phonebook">주소록</a>
     </li>
 </ul>
 <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/mypage/paystub">급여 명세서</a></li>
+    <li class="breadcrumb-item"><a href="${sessionScope.contextPath}/mypage/paystub">급여 명세서</a></li>
     <li class="breadcrumb-item active"><a href="#">자세히 보기</a></li>
 </ol>
 

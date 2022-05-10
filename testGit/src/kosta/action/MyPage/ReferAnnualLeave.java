@@ -17,7 +17,7 @@ public class ReferAnnualLeave implements Action {
         annualLeave.setAn_acknowledge("반려");
         myPageService.updateAnnualLeave(annualLeave);
 
-        actionForward.setPath("/mypage/annual-leave");
+        actionForward.setPath("annual-leave");
 
         return actionForward;
     }
