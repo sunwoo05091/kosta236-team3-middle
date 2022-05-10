@@ -14,7 +14,7 @@
 
   <script>
     <%--GET 방식--%>
-    location.href = "/mypage/init"
+    location.href = "mypage/init"
   </script>
 </head>
 <body>
