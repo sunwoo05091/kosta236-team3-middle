@@ -13,7 +13,7 @@
 		<li>${board.b_title }</li>
 		<li>${board.e_no }</li>
 		<li>${board.b_contents }</li>
-		<li><a href="/TestGit/downloadboard.jsp?filename=${board.b_fname}">${board.b_fname}</a></li>
+		<li><a href="/testGit/downloadboard.jsp?filename=${board.b_fname}">${board.b_fname}</a></li>
 	</ul>
 	<br>
 	

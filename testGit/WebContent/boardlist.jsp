@@ -39,16 +39,7 @@
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
-        </li>
+
       </ul>
       <form class="d-flex">
         <input class="form-control me-sm-2" type="text" placeholder="Search">
@@ -67,7 +58,7 @@
   </li>
 	
   <li class="nav-item">
-    <a class="nav-link" href="/TestGit/Meetingroom/listReserveAction.do">회의실</a>
+    <a class="nav-link" href="/testGit/Meetingroom/listReserveAction.do">회의실</a>
   </li>
   
 </ul>
@@ -105,7 +96,7 @@
 					
 						<c:choose>
 							<c:when test="${pattern == 'jpg' || pattern == 'gif'|| pattern == 'png' }">
-								<img src="/TestGit/upload/${head }_small.${pattern}">
+								<img src="/testGit/upload/${head }_small.${pattern}">
 							</c:when>
 							<c:otherwise>
 								<c:out value="NO IMAGE"></c:out>
