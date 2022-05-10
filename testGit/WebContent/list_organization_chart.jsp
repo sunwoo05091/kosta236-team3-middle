@@ -106,7 +106,7 @@
 		      <td>${emp.name }</td>
 		      <td>${emp.phone_number }</td>
 		      <td>${emp.hiredate }</td>
-		      <td>${d_name }</td>
+		      <td>${dep }</td>
 		      <td>${emp.grade }</td>
 			</tr>
 	</c:forEach>

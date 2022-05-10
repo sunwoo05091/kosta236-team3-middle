@@ -23,8 +23,6 @@ public class ListOrganizationChartAction implements Action{
 		Emp emp = (Emp)session.getAttribute("emp");
 		int d_no = emp.getD_no();
 		
-		List<Emp> list = service.listEmpService(d_no);
-		request.setAttribute("list", list);
 		String d_name = null;
 
 		switch (d_no) {
@@ -48,6 +46,8 @@ public class ListOrganizationChartAction implements Action{
 		
 		String d_name2 = null;
 		int dep = Integer.parseInt(request.getParameter("dep"));
+		List<Emp> list = service.listEmpService(dep);
+		request.setAttribute("list", list);
 		
 		switch (dep) {
 		case 1:
