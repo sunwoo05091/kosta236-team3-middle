@@ -10,6 +10,7 @@
 		<typeAlias type="kosta.domain.Search" alias="Search"/>
 		<typeAlias type="kosta.domain.Emp" alias = "Emp"/>
 		<typeAlias type="kosta.domain.Login" alias = "Login"/>
+		<typeAlias type="kosta.domain.Schedule" alias = "schedule"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -24,6 +25,7 @@
 	<mappers>
 		<mapper resource="kosta/mapper/Community.xml"/>
 		<mapper resource = "kosta/mapper/Login.xml"/>
+		<mapper resource = "kosta/mapper/Schedule.xml"/>
 	</mappers>
 	
 </configuration>
