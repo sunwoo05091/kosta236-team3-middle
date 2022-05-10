@@ -14,17 +14,25 @@ public interface CommunityMapper {
 	Community detailCommunityTrade(int cm_no);
 	int updateCommunityTrade(Community community);
 	int deleteCommunityTrade(Community community);
-	int countBoard(Search search);
+	int countTrade(Search search);
+	int countClub(Search search);
+	int countCarfull(Search search);
 	
 	int insertReply(Reply reply);
 	List<Reply> listReply(int cm_no);
 	
 	List<Community> listCommunityClub(Search search, RowBounds row);
 	int insertCommunityClub(Community community);
+	int updateCommunityClub(Community community);
 	
 	List<Community> listCommunityCarfull(Search search, RowBounds row);
 	int insertCommunityCarfull(Community community);
+	int updateCommunityCarfull(Community community);
 	
 	List<Community> noticeCommunity();
+	
+	int insertNoticeTrade(Community community);
+	int insertNoticeClub(Community community);
+	int insertNoticeCarfull(Community community);
 	
 }

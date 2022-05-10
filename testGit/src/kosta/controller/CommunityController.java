@@ -12,19 +12,27 @@ import javax.servlet.http.HttpServletResponse;
 import kosta.action.Action;
 import kosta.action.ActionForward;
 import kosta.action.DeleteCommunityTradeAction;
+import kosta.action.DetailCommunityCarfullAction;
+import kosta.action.DetailCommunityClubAction;
 import kosta.action.InsertCommunityCarfull;
 import kosta.action.InsertCommunityCarfullFormAction;
 import kosta.action.InsertCommunityClub;
 import kosta.action.InsertCommunityClubFormAction;
 import kosta.action.InsertCommunityTrade;
 import kosta.action.InsertCommunityTradeFormAction;
+import kosta.action.InsertNoticeTrade;
+import kosta.action.InsertNoticeTradeFormAction;
 import kosta.action.InsertReplyAction;
 import kosta.action.ListCommunityAction;
 import kosta.action.ListCommunityCarfullAction;
 import kosta.action.ListCommunityClubAction;
+import kosta.action.UpdateCommunityCarfullAction;
+import kosta.action.UpdateCommunityCarfullFormAction;
+import kosta.action.UpdateCommunityClubAction;
+import kosta.action.UpdateCommunityClubFormAction;
 import kosta.action.UpdateCommunityTradeAction;
 import kosta.action.UpdateCommunityTradeFormAction;
-import kosta.action.detailCommunityTradeAction;
+import kosta.action.DetailCommunityTradeAction;
 
 @WebServlet("/community/*")
 public class CommunityController extends HttpServlet {
@@ -71,7 +79,23 @@ public class CommunityController extends HttpServlet {
 			}
     		
     	}else if(command.equals("detailTradeAction.do")) {
-    		action = new detailCommunityTradeAction();
+    		action = new DetailCommunityTradeAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    		
+    	}else if(command.equals("detailClubAction.do")) {
+    		action = new DetailCommunityClubAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    		
+    	}else if(command.equals("detailCarfullAction.do")) {
+    		action = new DetailCommunityCarfullAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
@@ -86,8 +110,40 @@ public class CommunityController extends HttpServlet {
 				e.printStackTrace();
 			}
 	    	
+    	}else if(command.equals("updateClubForm.do")) {
+    		action = new UpdateCommunityClubFormAction();
+	    	try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+	    	
+    	}else if(command.equals("updateCarfullForm.do")) {
+    		action = new UpdateCommunityCarfullFormAction();
+	    	try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+	    	
     	}else if(command.equals("updateTradeAction.do")) {
     		action = new UpdateCommunityTradeAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    		
+    	}else if(command.equals("updateClubAction.do")) {
+    		action = new UpdateCommunityClubAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    		
+    	}else if(command.equals("updateCarfullAction.do")) {
+    		action = new UpdateCommunityCarfullAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
@@ -156,6 +212,20 @@ public class CommunityController extends HttpServlet {
 				e.printStackTrace();
 			}
     		
+    	}else if(command.equals("insertNoticeTradeAction.do")) {
+    		action = new InsertNoticeTrade();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("insertNoticeTradeFormAction.do")) {
+    		action = new InsertNoticeTradeFormAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
     	}
     	
     	
