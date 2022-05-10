@@ -11,7 +11,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import kosta.domain.Community;
 import kosta.domain.CommunityDao;
-import kosta.domain.ListModel;
+import kosta.domain.CommunityListModel;
 import kosta.domain.Reply;
 import kosta.domain.Search;
 import kosta.util.ImageUtil;
@@ -19,14 +19,14 @@ import kosta.util.ImageUtil;
 public class CommunityService {
 	private static CommunityService service = new CommunityService();
 	private static CommunityDao dao;
-	private static final int PAGE_SIZE = 2;
+	private static final int PAGE_SIZE = 10;
 	
 	public static CommunityService getInstance() {
 		dao = CommunityDao.getInstance();
 		return service;
 	}
 
-	public ListModel listCommunityService(HttpServletRequest request)throws Exception{
+	public CommunityListModel listCommunityService(HttpServletRequest request)throws Exception{
 		Search search = new Search();
 		HttpSession session = request.getSession();
 		
@@ -49,8 +49,8 @@ public class CommunityService {
 		}
 		
 		//총 글 갯수
-		int totalCount = dao.countBoard(search);
-		System.out.println(totalCount);
+		int totalCount = dao.countTrade(search);
+		System.out.println("중고거래 갯수 : " + totalCount);
 		
 		//총 페이지수
 		int totalPageCount = totalCount/PAGE_SIZE;
@@ -81,12 +81,12 @@ public class CommunityService {
 		int startRow = (requestPage - 1) * PAGE_SIZE;
 		
 		List<Community> list = dao.listCommunity(startRow, search);
-		ListModel listModel = new ListModel(list, requestPage, totalPageCount, startPage, endPage);
+		CommunityListModel listModel = new CommunityListModel(list, requestPage, totalPageCount, startPage, endPage);
 		
 		return listModel;
 		
 	}
-	public ListModel listCommunityClubService(HttpServletRequest request)throws Exception{
+	public CommunityListModel listCommunityClubService(HttpServletRequest request)throws Exception{
 		Search search = new Search();
 		HttpSession session = request.getSession();
 		
@@ -109,11 +109,12 @@ public class CommunityService {
 		}
 		
 		//총 글 갯수
-		int totalCount = dao.countBoard(search);
-		System.out.println(totalCount);
+		int totalCount = dao.countClub(search);
+		System.out.println("동아리 갯수 : " + totalCount);
 		
 		//총 페이지수
 		int totalPageCount = totalCount/PAGE_SIZE;
+		System.out.println("페이지 갯수 : " + PAGE_SIZE);
 		
 		//나머지 처리
 		if(totalCount%PAGE_SIZE > 0) {
@@ -141,12 +142,12 @@ public class CommunityService {
 		int startRow = (requestPage - 1) * PAGE_SIZE;
 		
 		List<Community> list = dao.listCommunityClub(startRow, search);
-		ListModel listModel = new ListModel(list, requestPage, totalPageCount, startPage, endPage);
+		CommunityListModel listModel = new CommunityListModel(list, requestPage, totalPageCount, startPage, endPage);
 		
 		return listModel;
 	}
 	
-	public ListModel listCommunityCarfullService(HttpServletRequest request)throws Exception{
+	public CommunityListModel listCommunityCarfullService(HttpServletRequest request)throws Exception{
 		Search search = new Search();
 		HttpSession session = request.getSession();
 		
@@ -169,7 +170,7 @@ public class CommunityService {
 		}
 		
 		//총 글 갯수
-		int totalCount = dao.countBoard(search);
+		int totalCount = dao.countCarfull(search);
 		System.out.println(totalCount);
 		
 		//총 페이지수
@@ -201,7 +202,7 @@ public class CommunityService {
 		int startRow = (requestPage - 1) * PAGE_SIZE;
 		
 		List<Community> list = dao.listCommunityCarfull(startRow, search);
-		ListModel listModel = new ListModel(list, requestPage, totalPageCount, startPage, endPage);
+		CommunityListModel listModel = new CommunityListModel(list, requestPage, totalPageCount, startPage, endPage);
 		
 		return listModel;
 	}
@@ -254,9 +255,9 @@ public class CommunityService {
 		
 		Community community = new Community();
 		community.setCm_title(multi.getParameter("cm_title"));
-		community.setCm_price(multi.getParameter("cm_price"));
 		community.setCm_contents(multi.getParameter("cm_contents"));
 		community.setCm_fname("");
+		System.out.println(community);
 		
 		if(multi.getFilesystemName("cm_fname") != null) {
 			String cm_fname = (String)multi.getFilesystemName("cm_fname");
@@ -282,7 +283,18 @@ public class CommunityService {
 		return dao.insertCommunityClub(community);
 	}
 	
-	public int insertCommunityCarfullService(HttpServletRequest request)throws Exception{
+	public int insertNoticeTradeService(HttpServletRequest request)throws Exception{
+		request.setCharacterEncoding("utf-8");
+		
+		
+		Community community = new Community();
+		community.setCm_title(request.getParameter("cm_title"));
+		community.setCm_contents(request.getParameter("cm_contents"));
+		
+		return dao.insertNoticeTrade(community);
+	}
+	
+	public int insertNoticeClubService(HttpServletRequest request)throws Exception{
 		request.setCharacterEncoding("utf-8");
 		
 		String uploadPath = request.getRealPath("upload");
@@ -292,9 +304,9 @@ public class CommunityService {
 		
 		Community community = new Community();
 		community.setCm_title(multi.getParameter("cm_title"));
-		community.setCm_price(multi.getParameter("cm_price"));
 		community.setCm_contents(multi.getParameter("cm_contents"));
 		community.setCm_fname("");
+		System.out.println(community);
 		
 		if(multi.getFilesystemName("cm_fname") != null) {
 			String cm_fname = (String)multi.getFilesystemName("cm_fname");
@@ -317,6 +329,55 @@ public class CommunityService {
 			}
 		}
 		
+		return dao.insertNoticeClub(community);
+	}
+	
+	public int insertNoticeCarfullService(HttpServletRequest request)throws Exception{
+		request.setCharacterEncoding("utf-8");
+		
+		String uploadPath = request.getRealPath("upload");
+		int size = 20 * 1024 * 1024;
+		
+		MultipartRequest multi = new MultipartRequest(request, uploadPath, size, "utf-8", new DefaultFileRenamePolicy());
+		
+		Community community = new Community();
+		community.setCm_title(multi.getParameter("cm_title"));
+		community.setCm_contents(multi.getParameter("cm_contents"));
+		community.setCm_fname("");
+		System.out.println(community);
+		
+		if(multi.getFilesystemName("cm_fname") != null) {
+			String cm_fname = (String)multi.getFilesystemName("cm_fname");
+			community.setCm_fname(cm_fname);
+			
+			//썸네일 이미지(gif,jpg,png) aa.jpg => aa_small.jpg
+			String pattern = cm_fname.substring(cm_fname.indexOf(".")+1);//gif, jpg, png
+			String head = cm_fname.substring(0, cm_fname.indexOf("."));//aa
+			
+			//원본 파일 객체
+			String imagePath = uploadPath + "\\" + cm_fname;
+			File src = new File(imagePath);
+			
+			//썸네일 파일 객체
+			String thumPath = uploadPath + "\\" + head + "_small." + pattern;
+			File dest = new File(thumPath);
+			
+			if(pattern.equals("gif") || pattern.equals("jpg") || pattern.equals("png")) {
+				ImageUtil.resize(src, dest, 100, ImageUtil.RATIO);
+			}
+		}
+		
+		return dao.insertNoticeCarfull(community);
+	}
+	
+	public int insertCommunityCarfullService(HttpServletRequest request)throws Exception{
+		request.setCharacterEncoding("utf-8");
+		
+		Community community = new Community();
+		community.setCm_title(request.getParameter("cm_title"));
+		community.setCm_contents(request.getParameter("cm_contents"));
+		
+		
 		return dao.insertCommunityCarfull(community);
 	}
 	
@@ -326,15 +387,69 @@ public class CommunityService {
 	
 	public int updateCommunityTradeService(HttpServletRequest request)throws Exception{
 		request.setCharacterEncoding("utf-8");
+		String uploadPath = request.getRealPath("upload");
+		int size = 20 * 1024 * 1024;
+		
+		MultipartRequest multi = new MultipartRequest(request, uploadPath, size, "utf-8", new DefaultFileRenamePolicy());
 		Community community = new Community();
-		community.setCm_no(Integer.parseInt(request.getParameter("cm_no")));
-		community.setCm_title(request.getParameter("cm_title"));
-		community.setCm_price(request.getParameter("cm_price"));
-		community.setCm_contents(request.getParameter("cm_contents"));
+		community.setCm_no(Integer.parseInt(multi.getParameter("cm_no")));
+		System.out.println("test");
+		System.out.println(multi.getParameter("cm_no"));
+		community.setCm_title(multi.getParameter("cm_title"));
+		community.setCm_price(multi.getParameter("cm_price"));
+		community.setCm_contents(multi.getParameter("cm_contents"));
+		community.setCm_state(multi.getParameter("cm_state"));
+		community.setCm_fname(null);
+		
+		if(multi.getFilesystemName("cm_fname") != null) {
+			community.setCm_fname(multi.getFilesystemName("cm_fname"));
+		}
+		
+		System.out.println(community.getCm_fname());
+		
+		
+		
 		
 		return dao.updateCommunityTrade(community);
 	}
 	
+	public int updateCommunityClubService(HttpServletRequest request)throws Exception{
+		request.setCharacterEncoding("utf-8");
+		String uploadPath = request.getRealPath("upload");
+		int size = 20 * 1024 * 1024;
+		
+		MultipartRequest multi = new MultipartRequest(request, uploadPath, size, "utf-8", new DefaultFileRenamePolicy());
+		Community community = new Community();
+		community.setCm_no(Integer.parseInt(multi.getParameter("cm_no")));
+		community.setCm_title(multi.getParameter("cm_title"));
+		community.setCm_contents(multi.getParameter("cm_contents"));
+		community.setCm_state(multi.getParameter("cm_state"));
+		community.setCm_fname(null);
+		
+		if(multi.getFilesystemName("cm_fname") != null) {
+			community.setCm_fname(multi.getFilesystemName("cm_fname"));
+		}
+		
+		System.out.println(community.getCm_fname());
+		
+		
+		
+		
+		return dao.updateCommunityClub(community);
+	}
+	
+	public int updateCommunityCarfullService(HttpServletRequest request)throws Exception{
+		request.setCharacterEncoding("utf-8");
+		
+		Community community = new Community();
+		community.setCm_no(Integer.parseInt(request.getParameter("cm_no")));
+		community.setCm_title(request.getParameter("cm_title"));
+		community.setCm_contents(request.getParameter("cm_contents"));
+		community.setCm_state(request.getParameter("cm_state"));
+		
+		
+		return dao.updateCommunityCarfull(community);
+	}
 	public int deleteCommunityTradeService(HttpServletRequest request)throws Exception{
 		
 		Community community = new Community();
