@@ -131,7 +131,7 @@ public class Logincontroller extends HttpServlet {
 	    		e.printStackTrace();
 	    	}
 	    }
-    	if (forward != null) {
+    	if (forward != null) { 
     		if(forward.isRedirect()) {//rediect
     			response.sendRedirect(forward.getPath());
     		}else {//Dispatcher
