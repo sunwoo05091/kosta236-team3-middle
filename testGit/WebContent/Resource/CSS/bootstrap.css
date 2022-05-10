@@ -12266,3 +12266,11 @@ fieldset:disabled .btn {
 #logout{
 	color: #FFFFFFEF;
 }
+
+#mini_list_orgaization_chart{
+	width:400px;
+	margin-top : 20px;
+}
+#short-sidebar{
+	height : 300px;
+}

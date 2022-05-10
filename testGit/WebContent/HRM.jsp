@@ -79,7 +79,7 @@
     			<text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
   			</svg>
   			<br>
-		    <div class="card-text"><div>${d_name }부서</div><div>${emp.name }님</div></div>
+		    <div class="card-text"><div>${d_name }부서</div><div>${emp.name }님</div></div></div></div>
 </ul>
 <ol class="breadcrumb">
   <li class="breadcrumb-item"><a href="mainAction.do">홈</a></li>
