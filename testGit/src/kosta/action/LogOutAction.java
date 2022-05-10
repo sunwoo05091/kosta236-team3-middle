@@ -17,7 +17,7 @@ public class LogOutAction implements Action {
 		session.removeAttribute("emp");
 		
 		//페이지 이동 : 1)insertAction.jsp 2)list.jsp 3)기타(listAction.do)
-		forward.setPath("loginFormAction.do");
+		forward.setPath("loginFormAction.do?loginfail=0");
 		forward.setRedirect(true);//redirect
 		
 		return forward;

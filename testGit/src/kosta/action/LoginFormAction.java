@@ -12,7 +12,6 @@ public class LoginFormAction implements Action{
 		ActionForward forward = new ActionForward();
 		
 		int loginfail = Integer.parseInt(request.getParameter("loginfail"));
-		
 		request.setAttribute("loginfail", loginfail);
 		
 		forward.setRedirect(false);
