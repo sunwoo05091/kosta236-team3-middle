@@ -84,7 +84,7 @@
 <ol class="breadcrumb">
   <li class="breadcrumb-item"><a href="mainAction.do">홈</a></li>
   <li class="breadcrumb-item"><a href="organizationChartAction.do">조직도</a></li>
-  <li class="breadcrumb-item active">${d_name }</li>
+  <li class="breadcrumb-item active">${dep }</li>
 </ol>
 <table class="table table-hover">
 <thead>
@@ -110,5 +110,7 @@
 		      <td>${emp.grade }</td>
 			</tr>
 	</c:forEach>
+</tbody>
+</table>
 </body>
 </html>

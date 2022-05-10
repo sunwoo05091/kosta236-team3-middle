@@ -50,6 +50,11 @@
                                         	alert ('아이디, 비밀번호 오류입니다.')
                                         	</script>
                                         </c:if>
+                                        <c:if test = "${loginfail == 2 }" >
+                                        	<script type="text/javascript">
+                                        	alert ('관리자의 승인을 기다리는 중입니다.')
+                                        	</script>
+                                        </c:if>
                                          <a href="insertEmpFormAction.do" class="btn btn-primary btn-user btn-block"> 계정생성 </a>
                                         <hr>
                                     </form>

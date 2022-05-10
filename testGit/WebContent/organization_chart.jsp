@@ -95,10 +95,10 @@
 					<button type="button" class="btn btn-outline-info">부사장</button>
 					<ul>
 						<li>
-							<button type = "button" class="btn btn-outline-secondary" onClick = "location.href = 'listOrganizationChartAction.do?d_no=1'">인사</button>
+							<button type = "button" class="btn btn-outline-secondary" onClick = "location.href = 'listOrganizationChartAction.do?dep=1'">인사</button>
 						</li>
 						<li>
-							<button type="button" class="btn btn-outline-secondary" onClick = "location.href = 'listOrganizationChartAction.do?d_no=5'">총무</button>
+							<button type="button" class="btn btn-outline-secondary" onClick = "location.href = 'listOrganizationChartAction.do?dep=5'">총무</button>
 						</li>
 					</ul>
 				</li>
@@ -106,10 +106,10 @@
 					<button type="button" class="btn btn-outline-info">이사</button>
 					<ul>
 						<li>
-							<button type="button" class="btn btn-outline-secondary" onClick = "location.href = 'listOrganizationChartAction.do?d_no=3'">개발</button>
+							<button type="button" class="btn btn-outline-secondary" onClick = "location.href = 'listOrganizationChartAction.do?dep=3'">개발</button>
 						</li>
 						<li>
-							<button type="button" class="btn btn-outline-secondary" onClick = "location.href = 'listOrganizationChartAction.do?d_no=2'">영업</button>
+							<button type="button" class="btn btn-outline-secondary" onClick = "location.href = 'listOrganizationChartAction.do?dep=2'">영업</button>
 						</li>
 					</ul>
 				</li>
