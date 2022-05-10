@@ -1,9 +1,6 @@
-package controller;
+package kosta.controller;
 
-import action.MyPage.Action;
-import action.MyPage.ActionForward;
-import action.MyPage.*;
-import action.MyPage.listAnnualLeave;
+import kosta.action.MyPage.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
