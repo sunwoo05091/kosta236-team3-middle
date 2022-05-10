@@ -5,6 +5,12 @@
 
 <configuration>
 	<typeAliases>
+		<typeAlias type="kosta.domain.Approver" alias="Approver"/>
+		<typeAlias type="kosta.domain.Document" alias="Document"/>
+		<typeAlias type="kosta.domain.Receiver" alias="Receiver"/>
+		<typeAlias type="kosta.domain.Referrer" alias="Referrer"/>
+		<typeAlias type="kosta.domain.DocumentSearch" alias="DocumentSearch"/>
+		<typeAlias type="kosta.domain.DocumentList" alias="DocumentList"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -17,6 +23,8 @@
 	</environments>
 	
 	<mappers>
+		<mapper resource="kosta/mapper/Document.xml"/>
+		
 	</mappers>
 	
 </configuration>
