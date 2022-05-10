@@ -10,11 +10,11 @@
 		<typeAlias type="kosta.domain.MeetingRoom" alias="MeetingRoom"/>
 		<typeAlias type="kosta.domain.Search" alias="Search"/>
 		<typeAlias type="kosta.domain.Schedule" alias = "schedule"/>
-	    <typeAlias type="kosta.domain.MyPage.Attendance" alias="Attendance"/>
-	    <typeAlias type="kosta.domain.MyPage.PrivateInfo" alias="PrivateInfo"/>
-	    <typeAlias type="kosta.domain.MyPage.PayStub" alias="PayStub"/>
-	    <typeAlias type="kosta.domain.MyPage.PhoneBook" alias="PhoneBook"/>
-	    <typeAlias type="kosta.domain.MyPage.AnnualLeave" alias="AnnualLeave"/>
+		<typeAlias type="kosta.domain.Attendance" alias="Attendance"/>
+		<typeAlias type="kosta.domain.PrivateInfo" alias="PrivateInfo"/>
+		<typeAlias type="kosta.domain.PayStub" alias="PayStub"/>
+		<typeAlias type="kosta.domain.PhoneBook" alias="PhoneBook"/>
+		<typeAlias type="kosta.domain.AnnualLeave" alias="AnnualLeave"/>
 	    <typeAlias type="kosta.domain.Approver" alias="Approver"/>
 	    <typeAlias type="kosta.domain.Document" alias="Document"/>
 	    <typeAlias type="kosta.domain.Receiver" alias="Receiver"/>
@@ -40,7 +40,7 @@
 		<mapper resource="kosta/mapper/Board.xml"/>
 		<mapper resource="kosta/mapper/MeetingRoom.xml"/>
 		<mapper resource="kosta/mapper/Schedule.xml"/>
-		<mapper resource="kosta/mapper/MyPage/MapperDetail.xml"/>
+		<mapper resource="kosta/mapper/MapperDetail.xml"/>
 		<mapper resource="kosta/mapper/Document.xml"/>
 		<mapper resource="kosta/mapper/Login.xml"/>
 		<mapper resource="kosta/mapper/Community.xml"/>
