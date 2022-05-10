@@ -3,17 +3,21 @@ package kosta.domain;
 import java.util.List;
 
 public class ListModel {
-	private List<Community> list;
+	private List<Board> list;
 	private int requestPage;
 	private int totalPageCount;
 	private int startPage;
 	private int endPage;
 	
-	public ListModel() {
-		
+	@Override
+	public String toString() {
+		return "ListModel [list=" + list + ", requestPage=" + requestPage + ", totalPageCount=" + totalPageCount
+				+ ", startPage=" + startPage + ", endPage=" + endPage + "]";
 	}
-	
-	public ListModel(List<Community> list, int requestPage, int totalPageCount, int startPage, int endPage) {
+
+	public ListModel() {}
+
+	public ListModel(List<Board> list, int requestPage, int totalPageCount, int startPage, int endPage) {
 		super();
 		this.list = list;
 		this.requestPage = requestPage;
@@ -22,20 +26,13 @@ public class ListModel {
 		this.endPage = endPage;
 	}
 
-	public List<Community> getList() {
+	public List<Board> getList() {
 		return list;
 	}
 
-
-	public void setList(List<Community> list) {
+	public void setList(List<Board> list) {
 		this.list = list;
 	}
-
-
-	public void setTotalPageCount(int totalPageCount) {
-		this.totalPageCount = totalPageCount;
-	}
-
 
 	public int getRequestPage() {
 		return requestPage;
@@ -49,7 +46,7 @@ public class ListModel {
 		return totalPageCount;
 	}
 
-	public void setToalPageCount(int totalPageCount) {
+	public void setTotalPageCount(int totalPageCount) {
 		this.totalPageCount = totalPageCount;
 	}
 
@@ -68,6 +65,5 @@ public class ListModel {
 	public void setEndPage(int endPage) {
 		this.endPage = endPage;
 	}
-	
-	
 }
+
