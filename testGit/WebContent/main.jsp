@@ -11,7 +11,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/Resource/js/login.js?ver=1"></script>
 <link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/bootstrap.min.css" type = "text/css">
-<link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/bootstrap.css?ver=4" type = "text/css">
+<link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/bootstrap.css?ver=6" type = "text/css">
 </head>
 <body onload = "printClock()">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -24,7 +24,7 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="mainAction.do">홈
+          <a class="nav-link active" href="/testGit/Login/mainAction.do">홈
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
@@ -59,16 +59,20 @@
     			<text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
   			</svg>
   			<br>
-		    <div class="card-text"><div>${d_name }부서</div><div>${emp.name }님</div></div>
+		    <div class="card-text"><div>${d_name }부서</div><div>${emp.grade } ${emp.name }님</div></div>
 		  </div>
 		</div>
 	</li>
 	<li>
+	<div class="card bg-light mb-3" style="max-width: 20rem;">
 	    	<div  style="border:1px solid #dedede; width:100%; height:60px; line-height:50px; color:#666;font-size:50px; text-align:center;" id="clock">
 			</div>
-		   <span class="badge rounded-pill bg-info"><a href = "checkInAction.do?e_no=${emp.e_no }">출근</a></span>
-		   <span class="badge rounded-pill bg-info"><a href = "#">외근</a></span>
-		   <span class="badge rounded-pill bg-info"><a href = "checkOutAction.do?e_no=${emp.e_no }">퇴근</a></span>
+			<div class="btn-group" role="group" aria-label="Basic example">
+			  <button type="button" class="btn btn-secondary" id="workcheckbtn" onclick="location.href='checkInAction.do?e_no=${emp.e_no }'">출근</button>
+			  <button type="button" class="btn btn-secondary" id="workcheckbtn">외근</button>
+			  <button type="button" class="btn btn-secondary" id="workcheckbtn" onclick="location.href='checkOutAction.do?e_no=${emp.e_no }'">퇴근</button>
+			</div>
+	</div>
 	</li>
 	<li class="nav-item">
     	<a class="nav-link" href="organizationChartAction.do">조직도</a>
@@ -78,7 +82,7 @@
 <ul class="mainCard">
 	<li class="mainbox">
 <div class="card bg-light mb-3" style="max-width: 20rem;">
-  <div class="card-header">전자결제</div>
+  <div class="card-header"><img src="/testGit/upload/document.PNG">전자결제</div>
   <div class="card-body">
   <ul>
 	  <li>
@@ -96,7 +100,7 @@
 	</li>
 	<li class="mainbox">
 <div class="card bg-light mb-3" style="max-width: 20rem;">
-  <div class="card-header">일정관리</div>
+  <div class="card-header"><img src="/testGit/upload/calendar.PNG">일정관리</div>
   <div class="card-body">
   <ul>
 	  <li>
@@ -114,7 +118,7 @@
 	</li>
 	<li class="mainbox">
 <div class="card bg-light mb-3" style="max-width: 20rem;">
-  <div class="card-header">공지사항</div>
+  <div class="card-header"><img src="/testGit/upload/board.PNG">공지사항</div>
   <div class="card-body">
   <ul>
 	  <li>
@@ -136,7 +140,7 @@
 <ul class="mainCard">
 	<li class="mainbox">
 <div class="card bg-light mb-3" style="max-width: 20rem;">
-  <div class="card-header">커뮤니티</div>
+  <div class="card-header"><img src="/testGit/upload/community.PNG">커뮤니티</div>
   <div class="card-body">
   <ul>
 	  <li>
@@ -154,7 +158,7 @@
 	</li>
 	<li class="mainbox">
 <div class="card bg-light mb-3" style="max-width: 20rem;">
-  <div class="card-header">마이페이지</div>
+  <div class="card-header"><img src="/testGit/upload/mypage.PNG">마이페이지</div>
   <div class="card-body">
   <ul>
 	  <li>
@@ -173,7 +177,7 @@
 	<c:if test = "${emp.d_no == 1}">
 	<li class="mainbox">
 <div class="card bg-light mb-3" style="max-width: 20rem;">
-  <div class="card-header">인사관리</div>
+  <div class="card-header"><img src="/testGit/upload/personel.PNG">인사관리</div>
   <div class="card-body">
   <ul>
 	  <li>
