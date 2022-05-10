@@ -8,7 +8,7 @@ public class InitPage implements Action {
         ActionForward actionForward = new ActionForward();
 
         //actionForward.setRedirect(false);
-        actionForward.setPath("/views/MyPage/InitMyPage.jsp");
+        actionForward.setPath("views/MyPage/InitMyPage.jsp");
 
         return actionForward;
     }
