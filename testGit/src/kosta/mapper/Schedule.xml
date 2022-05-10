@@ -28,7 +28,8 @@
 	</delete>
 	
 	<update id="updateSchedule" parameterType="schedule" >
-		update schedule set s_title=#{s_title}, s_contents= #{s_contents} 
+		update schedule set s_title=#{s_title}, s_contents= #{s_contents},
+		s_startday=#{s_startday},s_finishday=#{s_finishday}, situation=#{situation}, s_type=#{s_type}
 			where s_no = #{s_no}
 	</update>
 	
