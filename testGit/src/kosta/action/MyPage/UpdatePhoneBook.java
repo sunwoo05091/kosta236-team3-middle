@@ -26,7 +26,7 @@ public class UpdatePhoneBook implements Action {
 //        MyPage_ListDB listDB = myPageService.listDB("PhoneBook", phoneBook.getE_No(), request);
 //
 //        request.setAttribute("listPhoneBook", listDB);
-        actionForward.setPath("/mypage/phonebook");
+        actionForward.setPath("phonebook");
 
         return actionForward;
     }

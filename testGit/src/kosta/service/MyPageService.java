@@ -1,5 +1,6 @@
 package kosta.service;
 
+import kosta.dao.MyPageDao;
 import kosta.domain.MyPage.*;
 
 import javax.servlet.http.HttpServletRequest;
