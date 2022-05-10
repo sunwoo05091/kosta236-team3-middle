@@ -138,7 +138,7 @@ public class MyPageController extends HttpServlet {
         System.out.println("requestURI : " + requestURI);
         System.out.println("contextPath : " + contextPath);
 
-        String command = requestURI.substring("/mypage/".length());
+        String command = requestURI.substring("/testGit/mypage/".length());
 
         ActionForward actionForward = new ActionForward();
 
