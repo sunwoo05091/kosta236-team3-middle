@@ -1,14 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE configuration
-  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-config.dtd">
-
 <configuration>
 	<typeAliases>
 		<typeAlias type="kosta.domain.Board" alias="Board"/>
 		<typeAlias type="kosta.domain.Reserve" alias="Reserve"/>
 		<typeAlias type="kosta.domain.MeetingRoom" alias="MeetingRoom"/>
 		<typeAlias type="kosta.domain.Search" alias="Search"/>
+
+
+		<typeAlias type="kosta.domain.Approver" alias="Approver"/>
+		<typeAlias type="kosta.domain.Document" alias="Document"/>
+		<typeAlias type="kosta.domain.Receiver" alias="Receiver"/>
+		<typeAlias type="kosta.domain.Referrer" alias="Referrer"/>
+		<typeAlias type="kosta.domain.DocumentSearch" alias="DocumentSearch"/>
+		<typeAlias type="kosta.domain.DocumentList" alias="DocumentList"/>
+		<typeAlias type="kosta.domain.Community" alias="Community"/>
+		<typeAlias type="kosta.domain.Reply" alias="Reply"/>
+		<typeAlias type="kosta.domain.Search" alias="Search"/>
+		<typeAlias type="kosta.domain.Emp" alias = "Emp"/>
+		<typeAlias type="kosta.domain.Login" alias = "Login"/>
+		<typeAlias type="kosta.domain.Schedule" alias = "schedule"/>
+
 	</typeAliases>
 	
 	<environments default="development">
@@ -21,8 +31,15 @@
 	</environments>
 	
 	<mappers>
+
 		<mapper resource="kosta/mapper/Board.xml"/>
 		<mapper resource="kosta/mapper/MeetingRoom.xml"/>
+
+		<mapper resource="kosta/mapper/Document.xml"/>
+		<mapper resource="kosta/mapper/Community.xml"/>
+		<mapper resource = "kosta/mapper/Login.xml"/>
+		<mapper resource = "kosta/mapper/Schedule.xml"/>
+
 	</mappers>
 	
 </configuration>

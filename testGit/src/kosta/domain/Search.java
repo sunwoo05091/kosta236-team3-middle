@@ -28,3 +28,4 @@ public class Search {
 		this.searchKey = searchKey;
 	}
 }
+
