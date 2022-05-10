@@ -1,6 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
 
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="EUC-KR">
@@ -86,49 +86,49 @@ method="post" action="/mypage/updatePrivateInfo.do">
             <label for="staticE_No" class="col-sm-2 col-form-label">사원번호</label>
             <div class="col-sm-10">
                 <input type="text" readonly="" class="form-control-plaintext" id="staticE_No"
-                       name="e_No" value=${privateInfo.e_No}>
+                       name="e_No" value="${privateInfo.e_No}">
             </div>
         </div>
         <div class="form-group row">
             <label for="staticD_No" class="col-sm-2 col-form-label">부서번호</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="staticD_No"
-                       name="d_No" value=${privateInfo.d_No}>
+                       name="d_No" value="${privateInfo.d_No}">
             </div>
         </div>
         <div class="form-group row">
             <label for="staticGrade" class="col-sm-2 col-form-label">직급</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="staticGrade"
-                       name="grade" value=${privateInfo.grade}>
+                       name="grade" value="${privateInfo.grade}">
             </div>
         </div>
         <div class="form-group row">
             <label for="staticName" class="col-sm-2 col-form-label">이름</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="staticName"
-                       name="name" value=${privateInfo.name}>
+                       name="name" value="${privateInfo.name}">
             </div>
         </div>
         <div class="form-group row">
             <label for="staticHireDate" class="col-sm-2 col-form-label">입사일</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="staticHireDate"
-                       name="hireDate" value=${privateInfo.hireDate}>
+                       name="hireDate" value="${privateInfo.hireDate}">
             </div>
         </div>
         <div class="form-group row">
             <label for="staticId" class="col-sm-2 col-form-label">아이디</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="staticId"
-                       name="id" value=${privateInfo.id}>
+                       name="id" value="${privateInfo.id}">
             </div>
         </div>
         <div class="form-group row">
             <label for="staticPhoneNumber" class="col-sm-2 col-form-label">전화번호</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="staticPhoneNumber"
-                       name="phoneNumber" value=${privateInfo.phoneNumber}>
+                       name="phoneNumber" value="${privateInfo.phoneNumber}">
             </div>
         </div>
         <div class="d-grid gap-2">

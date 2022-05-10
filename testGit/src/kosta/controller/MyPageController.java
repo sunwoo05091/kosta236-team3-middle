@@ -134,6 +134,7 @@ public class MyPageController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         System.out.println(request.getMethod());
         String requestURI = request.getRequestURI();
         String contextPath = request.getContextPath();
