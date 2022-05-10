@@ -63,15 +63,24 @@
 </nav>
 <ul class="nav nav-pills flex-column">
   <li class="nav-item">
-    <a class="nav-link" href="listCommunityAction.do">중고거래게시판</a>
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="listCommunityClubAction.do">동아리게시판</a>
+    <a class="nav-link" href="#">Link</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="listCommunityCarfullAction.do">카풀게시판</a>
+    <a class="nav-link disabled" href="#">Disabled</a>
   </li>
-  
 </ul>
 <ol class="breadcrumb">
   <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -79,7 +88,7 @@
   <li class="breadcrumb-item active">Data</li>
 </ol>
 
-<form action="insertCommunityCarfullAction.do" method="post">
+<form action="insertNoticeTradeAction.do" method="post">
    
     <div class="form-group">
       <label for="exampleInputEmail1" class="form-label mt-4">제목</label>

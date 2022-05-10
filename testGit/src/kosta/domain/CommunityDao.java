@@ -38,7 +38,7 @@ public class CommunityDao {
 		List<Community> list = null;
 		
 		try {
-			list = sqlSession.getMapper(CommunityMapper.class).listCommunity(search, new RowBounds(startRow, 2));
+			list = sqlSession.getMapper(CommunityMapper.class).listCommunity(search, new RowBounds(startRow, 10));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -75,7 +75,7 @@ public class CommunityDao {
 		List<Community> list = null;
 		
 		try {
-			list = sqlSession.getMapper(CommunityMapper.class).listCommunityClub(search, new RowBounds(startRow, 2));
+			list = sqlSession.getMapper(CommunityMapper.class).listCommunityClub(search, new RowBounds(startRow, 10));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -112,7 +112,7 @@ public class CommunityDao {
 		List<Community> list = null;
 		
 		try {
-			list = sqlSession.getMapper(CommunityMapper.class).listCommunityCarfull(search, new RowBounds(startRow, 2));
+			list = sqlSession.getMapper(CommunityMapper.class).listCommunityCarfull(search, new RowBounds(startRow, 10));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -167,6 +167,48 @@ public class CommunityDao {
 		
 		try {
 			re = sqlSession.getMapper(CommunityMapper.class).updateCommunityTrade(community);
+			if(re>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return re;
+	}
+	
+	public int updateCommunityClub(Community community) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+		
+		try {
+			re = sqlSession.getMapper(CommunityMapper.class).updateCommunityClub(community);
+			if(re>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return re;
+	}
+	
+	public int updateCommunityCarfull(Community community) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+		
+		try {
+			re = sqlSession.getMapper(CommunityMapper.class).updateCommunityCarfull(community);
 			if(re>0) {
 				sqlSession.commit();
 			}else {
@@ -239,11 +281,43 @@ public class CommunityDao {
 		return list;
 	}
 	
-	public int countBoard(Search search) {
+	public int countTrade(Search search) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		int re = 0;
 		try {
-			re = sqlSession.getMapper(CommunityMapper.class).countBoard(search);
+			re = sqlSession.getMapper(CommunityMapper.class).countTrade(search);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		
+		return re;
+	}
+	
+	public int countClub(Search search) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = 0;
+		try {
+			re = sqlSession.getMapper(CommunityMapper.class).countClub(search);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		
+		return re;
+	}
+	
+	public int countCarfull(Search search) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = 0;
+		try {
+			re = sqlSession.getMapper(CommunityMapper.class).countCarfull(search);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -270,5 +344,68 @@ public class CommunityDao {
 		}
 		
 		return notice;
+	}
+	
+	public int insertNoticeTrade(Community community) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+		
+		try {
+			re = sqlSession.getMapper(CommunityMapper.class).insertNoticeTrade(community);
+			if(re>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return re;
+	}
+	
+	public int insertNoticeClub(Community community) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+		
+		try {
+			re = sqlSession.getMapper(CommunityMapper.class).insertNoticeClub(community);
+			if(re>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return re;
+	}
+	
+	public int insertNoticeCarfull(Community community) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+		
+		try {
+			re = sqlSession.getMapper(CommunityMapper.class).insertNoticeCarfull(community);
+			if(re>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return re;
 	}
 }

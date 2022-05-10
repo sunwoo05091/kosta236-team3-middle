@@ -10,17 +10,18 @@ public class Community implements Serializable{
 	private String cm_date;
 	private String cm_title;
 	private int cm_hitcount;
-	private String cm_state;
+	private String cm_category;
 	private String cm_fname;
 	private int cm_fin;
 	private String e_no;
+	private String cm_state;
 	
 	public Community() {
 		
 	}
-	
+
 	public Community(int cm_no, String cm_price, String cm_contents, String cm_date, String cm_title, int cm_hitcount,
-			String cm_state, String cm_fname, int cm_fin, String e_no) {
+			String cm_category, String cm_fname, int cm_fin, String e_no, String cm_state) {
 		super();
 		this.cm_no = cm_no;
 		this.cm_price = cm_price;
@@ -28,10 +29,11 @@ public class Community implements Serializable{
 		this.cm_date = cm_date;
 		this.cm_title = cm_title;
 		this.cm_hitcount = cm_hitcount;
-		this.cm_state = cm_state;
+		this.cm_category = cm_category;
 		this.cm_fname = cm_fname;
 		this.cm_fin = cm_fin;
 		this.e_no = e_no;
+		this.cm_state = cm_state;
 	}
 
 	public int getCm_no() {
@@ -82,12 +84,12 @@ public class Community implements Serializable{
 		this.cm_hitcount = cm_hitcount;
 	}
 
-	public String getCm_state() {
-		return cm_state;
+	public String getCm_category() {
+		return cm_category;
 	}
 
-	public void setCm_state(String cm_state) {
-		this.cm_state = cm_state;
+	public void setCm_category(String cm_category) {
+		this.cm_category = cm_category;
 	}
 
 	public String getCm_fname() {
@@ -114,12 +116,21 @@ public class Community implements Serializable{
 		this.e_no = e_no;
 	}
 
+	public String getCm_state() {
+		return cm_state;
+	}
+
+	public void setCm_state(String cm_state) {
+		this.cm_state = cm_state;
+	}
+
 	@Override
 	public String toString() {
 		return "Community [cm_no=" + cm_no + ", cm_price=" + cm_price + ", cm_contents=" + cm_contents + ", cm_date="
-				+ cm_date + ", cm_title=" + cm_title + ", cm_hitcount=" + cm_hitcount + ", cm_state=" + cm_state
-				+ ", cm_fname=" + cm_fname + ", cm_fin=" + cm_fin + ", e_no=" + e_no + "]";
+				+ cm_date + ", cm_title=" + cm_title + ", cm_hitcount=" + cm_hitcount + ", cm_category=" + cm_category
+				+ ", cm_fname=" + cm_fname + ", cm_fin=" + cm_fin + ", e_no=" + e_no + ", cm_state=" + cm_state + "]";
 	}
+	
 	
 	
 	

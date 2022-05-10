@@ -2,18 +2,18 @@ package kosta.domain;
 
 import java.util.List;
 
-public class ListModel {
+public class CommunityListModel {
 	private List<Community> list;
 	private int requestPage;
 	private int totalPageCount;
 	private int startPage;
 	private int endPage;
 	
-	public ListModel() {
+	public CommunityListModel() {
 		
 	}
 	
-	public ListModel(List<Community> list, int requestPage, int totalPageCount, int startPage, int endPage) {
+	public CommunityListModel(List<Community> list, int requestPage, int totalPageCount, int startPage, int endPage) {
 		super();
 		this.list = list;
 		this.requestPage = requestPage;

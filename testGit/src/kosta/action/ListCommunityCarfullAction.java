@@ -1,9 +1,12 @@
 package kosta.action;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kosta.domain.ListModel;
+import kosta.domain.Community;
+import kosta.domain.CommunityListModel;
 import kosta.service.CommunityService;
 
 public class ListCommunityCarfullAction implements Action {
@@ -13,8 +16,11 @@ public class ListCommunityCarfullAction implements Action {
 		CommunityService service = CommunityService.getInstance();
 		ActionForward forward = new ActionForward();
 		
-		ListModel listModel = service.listCommunityCarfullService(request);
+		CommunityListModel listModel = service.listCommunityCarfullService(request);
 		request.setAttribute("listModel", listModel);
+		
+		List<Community> notice = service.noticeCommunityService(request);
+		request.setAttribute("Notice", notice);
 		
 		forward.setPath("/communityCarfullList.jsp");
 		forward.setRedirect(false);
