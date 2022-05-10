@@ -5,6 +5,10 @@
 
 <configuration>
 	<typeAliases>
+		<typeAlias type="kosta.domain.Board" alias="Board"/>
+		<typeAlias type="kosta.domain.Reserve" alias="Reserve"/>
+		<typeAlias type="kosta.domain.MeetingRoom" alias="MeetingRoom"/>
+		<typeAlias type="kosta.domain.Search" alias="Search"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -17,6 +21,8 @@
 	</environments>
 	
 	<mappers>
+		<mapper resource="kosta/mapper/Board.xml"/>
+		<mapper resource="kosta/mapper/MeetingRoom.xml"/>
 	</mappers>
 	
 </configuration>
