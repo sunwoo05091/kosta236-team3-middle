@@ -25,14 +25,13 @@ public class LoginAction implements Action{
 			forward.setRedirect(true);//redirect
 			
 			return forward;
-			
 		}else {
-			if(emp.getSignupcheck()==0) {
+			
+			if(emp.getSignupcheck() == 0) {
 				forward.setPath("loginFormAction.do?loginfail=2");
 				forward.setRedirect(true);//redirect
 				
 				return forward;
-				
 			}
 				
 		session.setAttribute("emp", emp);

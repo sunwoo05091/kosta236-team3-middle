@@ -11,12 +11,12 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/Resource/js/login.js?ver=1"></script>
 <link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/bootstrap.min.css" type = "text/css">
-<link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/bootstrap.css?ver=3" type = "text/css">
+<link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/bootstrap.css?ver=4" type = "text/css">
 </head>
 <body onload = "printClock()">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">StarWorks</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -29,16 +29,16 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">전자결제</a>
+          <a class="nav-link" href="/testGit/document/listAction.do">전자결제</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">일정관리</a>
+          <a class="nav-link" href="/testGit/schedule/moveSchedule.do">일정관리</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">공지사항</a>
+          <a class="nav-link" href="/testGit/Meetingroom/listNoticeAction.do">공지사항</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">커뮤니티</a>
+          <a class="nav-link" href="/testGit/community/listCommunityAction.do">커뮤니티</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">마이페이지</a>
@@ -92,13 +92,13 @@
   <div class="card-body">
   <ul>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="/testGit/document/insertForm.do">문서작성</a>
  	 </li>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="#">수신함</a>
  	 </li>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="/testGit/document/listDocumentSignCompleteAction.do"> 완료문서함</a>
  	 </li>
   </ul>
   </div>
@@ -110,13 +110,13 @@
   <div class="card-body">
   <ul>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="/testGit/schedule/moveSchedule.do">일정관리</a>
  	 </li>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="/testGit/schedule/insertForm.do">일정작성</a>
  	 </li>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="/testGit/schedule/listAction.do">일정 전체조회</a>
  	 </li>
   </ul>
   </div>
@@ -128,13 +128,13 @@
   <div class="card-body">
   <ul>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="/testGit/board/listNoticeAction.do">공지사항</a>
  	 </li>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="/testGit/board/listReferenceroomAction.do">자료실</a>
  	 </li>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="/testGit/Meetingroom/listReserveAction.do">회의실</a>
  	 </li>
   </ul>
   </div>
@@ -150,13 +150,13 @@
   <div class="card-body">
   <ul>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="/testGit/community/listCommunityAction.do">중고거래게시판</a>
  	 </li>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="/testGit/community/listCommunityClubAction.do">동아리게시판</a>
  	 </li>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="/testGit/community/listCommunityCarfullAction.do">카풀게시판</a>
  	 </li>
   </ul>
   </div>

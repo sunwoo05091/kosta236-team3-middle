@@ -1,7 +1,6 @@
-package service;
+package kosta.service;
 
-import dao.MyPageDao;
-import domain.MyPageDTO.*;
+import kosta.domain.MyPage.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;

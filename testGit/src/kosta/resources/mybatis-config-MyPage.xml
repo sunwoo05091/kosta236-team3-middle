@@ -6,11 +6,11 @@
 <configuration>
 <!--	이름을 줄여서 쓰겠다-->
 	<typeAliases>
-		<typeAlias type="domain.MyPageDTO.Attendance" alias="Attendance"/>
-		<typeAlias type="domain.MyPageDTO.PrivateInfo" alias="PrivateInfo"/>
-		<typeAlias type="domain.MyPageDTO.PayStub" alias="PayStub"/>
-		<typeAlias type="domain.MyPageDTO.PhoneBook" alias="PhoneBook"/>
-		<typeAlias type="domain.MyPageDTO.AnnualLeave" alias="AnnualLeave"/>
+		<typeAlias type="kosta.domain.MyPage.Attendance" alias="Attendance"/>
+		<typeAlias type="kosta.domain.MyPage.PrivateInfo" alias="PrivateInfo"/>
+		<typeAlias type="kosta.domain.MyPage.PayStub" alias="PayStub"/>
+		<typeAlias type="kosta.domain.MyPage.PhoneBook" alias="PhoneBook"/>
+		<typeAlias type="kosta.domain.MyPage.AnnualLeave" alias="AnnualLeave"/>
 	</typeAliases>
 
 	<environments default="development">
@@ -23,6 +23,6 @@
 		</environment>
 	</environments>
 	<mappers>
-		<mapper resource="mapper/MyPage/MapperDetail.xml"/>
+		<mapper resource="kosta/mapper/MyPage/MapperDetail.xml"/>
 	</mappers>
 </configuration>
