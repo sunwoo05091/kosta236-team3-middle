@@ -16,9 +16,9 @@
 
 </head>
 <body background="ECF1F8">
-	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">StarWorks</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -26,33 +26,28 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Home
+          <a class="nav-link active" href="mainAction.do">홈
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="/testGit/document/listAction.do">전자결제</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="/testGit/schedule/moveSchedule.do">일정관리</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="/testGit/Meetingroom/listNoticeAction.do">공지사항</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" href="/testGit/community/listCommunityAction.do">커뮤니티</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">마이페이지</a>
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+          <a class="nav-link" href="logOutAction.do" id = "logout">로그아웃</a>
       </form>
     </div>
   </div>
@@ -67,7 +62,7 @@
   </li>
 	
   <li class="nav-item">
-    <a class="nav-link" href="/TestGit/Meetingroom/listReserveAction.do">회의실</a>
+    <a class="nav-link" href="/testGit/Meetingroom/listReserveAction.do">회의실</a>
   </li>
   
 </ul>
@@ -105,7 +100,7 @@
 					
 						<c:choose>
 							<c:when test="${pattern == 'jpg' || pattern == 'gif'|| pattern == 'png' }">
-								<img src="/TestGit/upload/${head }_small.${pattern}">
+								<img src="/testGit/upload/${head }_small.${pattern}">
 							</c:when>
 							<c:otherwise>
 								<c:out value="NO IMAGE"></c:out>
