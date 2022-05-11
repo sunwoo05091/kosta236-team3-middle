@@ -2,9 +2,11 @@ package kosta.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import javax.servlet.http.HttpSession;
 
 import kosta.domain.Emp;
+
 import kosta.domain.ListModel;
 import kosta.service.BoardService;
 
@@ -19,6 +21,7 @@ public class ListReferenceroomAction implements Action {
 		/* System.out.println("b_category"+ b_category); */
 		request.setAttribute("listModel", listModel);
 		
+
 		HttpSession session = request.getSession();
 		Emp emp = (Emp)session.getAttribute("emp");
 		request.setAttribute("emp", emp);
@@ -44,6 +47,7 @@ public class ListReferenceroomAction implements Action {
 		}
 		request.setAttribute("d_name", d_name);
 		
+
 		forward.setPath("/referenceroomlist.jsp"); //?b_category="+ b_category
 		forward.setRedirect(false);
 		

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -118,11 +119,13 @@
 		<a class="badge bg-warning" href="deleteReserveAction.do?r_no=${reserve.r_no }">삭제</a>
 	</div>
 <%-- 	<ul>
+
 		<li>${reserve.r_no }</li>
 		<li>${reserve.meetingtitle }</li>
 		<li>${reserve.r_starttime }</li>
 		<li>${reserve.r_endtime }</li>
 		<li>${reserve.mr_no }</li>
+
 	</ul> --%>
 	<br>
 		
@@ -134,6 +137,7 @@
 	</div>
 	
 </div>
+
 
 </body>
 </html>

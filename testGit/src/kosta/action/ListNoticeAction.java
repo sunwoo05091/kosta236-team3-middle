@@ -4,10 +4,12 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import javax.servlet.http.HttpSession;
 
 import kosta.domain.Board;
 import kosta.domain.Emp;
+
 import kosta.domain.ListModel;
 import kosta.service.BoardService;
 
@@ -22,6 +24,7 @@ public class ListNoticeAction implements Action {
 		System.out.println("listModel Action :"+listModel.toString());
 		/* System.out.println("b_category"+ b_category); */
 		request.setAttribute("listModel", listModel);
+
 		HttpSession session = request.getSession();
 		Emp emp = (Emp)session.getAttribute("emp");
 		request.setAttribute("emp", emp);
@@ -47,6 +50,7 @@ public class ListNoticeAction implements Action {
 		}
 		request.setAttribute("d_name", d_name);
 		
+
 		
 		forward.setPath("/boardlist.jsp"); //?b_category="+ b_category
 		forward.setRedirect(false);

@@ -1,6 +1,7 @@
 package kosta.action;
 
 public class ActionForward {
+
     private boolean isRedirect;
     private String path;
 
@@ -19,4 +20,5 @@ public class ActionForward {
     public void setPath(String path) {
         this.path = path;
     }
+
 }

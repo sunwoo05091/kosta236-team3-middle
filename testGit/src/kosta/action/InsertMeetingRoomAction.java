@@ -14,7 +14,9 @@ public class InsertMeetingRoomAction implements Action {
 		ActionForward forward = new ActionForward();
 		
 		service.insertMeetingRoomService(request);
+
 		System.out.println("hhhhh");
+
 		forward.setPath("listReserveAction.do");
 		forward.setRedirect(true);
 		

@@ -230,6 +230,7 @@ public class BoardService {
 	}
 	
 	public int updateBoardService(HttpServletRequest request)throws Exception{
+
 		
 		request.setCharacterEncoding("utf-8");
 		String uploadPath = request.getRealPath("upload");
@@ -268,6 +269,7 @@ public class BoardService {
 		return dao.updateBoard(board);
 	}
 		
+
 	
 	public int deleteBoardService(int b_no)throws Exception{
 		return dao.deleteBoard(b_no);

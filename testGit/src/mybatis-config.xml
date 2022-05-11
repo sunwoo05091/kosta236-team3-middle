@@ -9,6 +9,7 @@
 		<typeAlias type="kosta.domain.Reserve" alias="Reserve"/>
 		<typeAlias type="kosta.domain.MeetingRoom" alias="MeetingRoom"/>
 		<typeAlias type="kosta.domain.Search" alias="Search"/>
+
 		<typeAlias type="kosta.domain.Schedule" alias = "schedule"/>
 	    <typeAlias type="kosta.domain.Attendance" alias="Attendance"/>
 	    <typeAlias type="kosta.domain.PrivateInfo" alias="PrivateInfo"/>
@@ -25,6 +26,7 @@
         <typeAlias type="kosta.domain.Login" alias = "Login"/>
         <typeAlias type="kosta.domain.Community" alias="Community"/>
         <typeAlias type="kosta.domain.Reply" alias="Reply"/>
+
 	</typeAliases>
 	
 	<environments default="development">
@@ -39,6 +41,7 @@
 	<mappers>
 		<mapper resource="kosta/mapper/Board.xml"/>
 		<mapper resource="kosta/mapper/MeetingRoom.xml"/>
+
 		<mapper resource="kosta/mapper/Schedule.xml"/>
 		<mapper resource="kosta/mapper/MapperDetail.xml"/>
 		<mapper resource="kosta/mapper/Document.xml"/>
@@ -48,6 +51,7 @@
 		
 		<mapper resource="kosta/mapper/MapperDetail.xml"/>
 		
+
 	</mappers>
 	
 </configuration>
