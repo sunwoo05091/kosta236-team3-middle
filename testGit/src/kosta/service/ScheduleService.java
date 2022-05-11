@@ -79,7 +79,7 @@ public class ScheduleService {
 		//startPage, endPage, startRow, endRow
 		
 				//총글개수
-				int totalCount = dao.countSchedule();
+				int totalCount = dao.countMainPage();
 				
 				//총페이지수
 				int totalPageCount = totalCount/PAGE_SIZE;
@@ -107,7 +107,7 @@ public class ScheduleService {
 				//startRow = (현재페이지 - 1) * 페이지당 글개수
 				int startRow = (requestPage - 1) * PAGE_SIZE;
 				
-				List<Schedule> list = dao.listSchedule(startRow);
+				List<Schedule> list = dao.todaySchedule(startRow);
 				
 				ScheduleListModel model = new ScheduleListModel(list, requestPage, totalPageCount, startPage, endPage);
 		
@@ -140,6 +140,7 @@ public class ScheduleService {
 	
 	public List<Schedule> typeSchedule(HttpServletRequest request) {
 		int no = Integer.parseInt(request.getParameter("s_type"));
+		
 		String s_type = null;
 
 		switch (no) {

@@ -44,12 +44,15 @@
 	</select>
 	<select id="typeSchedule" parameterType="String" resultType="schedule">
 		select s_title,s_no,s_startday,s_finishday,situation, trunc(S_FINISHDAY-sysdate,1) AS remainingdays from schedule 
-			where s_type = #{s_type}
+			where s_type = #{s_type} AND situation = '진행'
+			
 	</select>
 	
 	<select id="countMainPage" resultType="int">
-		select count(trunc(S_FINISHDAY-sysdate,1)) from schedule
+		select count(trunc(S_FINISHDAY-sysdate,0)) AS remainingdays from schedule
+    		where situation = '진행'
 	</select>
+	
 	
 </mapper>
 
