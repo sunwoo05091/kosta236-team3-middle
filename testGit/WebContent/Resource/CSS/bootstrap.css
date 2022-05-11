@@ -63,7 +63,11 @@
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
   --bs-body-color: #7b8ab8;
+<<<<<<< HEAD
+  --bs-body-bg: #fff; 
+=======
   --bs-body-bg: #ECF1F8;
+>>>>>>> branch 'sub3' of https://github.com/sunwoo05091/kosta236-team3-middle.git
 }
 
 *,

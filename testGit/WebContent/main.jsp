@@ -35,7 +35,7 @@
           <a class="nav-link" href="/testGit/schedule/moveSchedule.do">일정관리</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/testGit/Meetingroom/listNoticeAction.do">공지사항</a>
+          <a class="nav-link" href="/testGit/board/listNoticeAction.do">공지사항</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/testGit/community/listCommunityAction.do">커뮤니티</a>
