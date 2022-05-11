@@ -12,7 +12,20 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/bootstrap.min.css" type = "text/css">
-<link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/bootstrap.css" type = "text/css">
+<link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/bootstrap.css?ver=4" type = "text/css">
+<style type="text/css">
+	.pageBox{
+		width: 700px;
+		margin-left: 330px;
+		padding: 20px;
+	}
+	
+		.searchBox{
+		margin-left: 500px;
+	}
+
+</style>
+
 
 </head>
 <body background="ECF1F8">
@@ -52,7 +65,20 @@
     </div>
   </div>
 </nav>
+
 <ul class="nav nav-pills flex-column">
+<li>	
+		<div class="card bg-light mb-3" style="max-width: 20rem;">
+		  <div class="card-body">
+		    <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="130" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+    			<rect width="100%" height="100%" fill="#868e96"></rect>
+    			<text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+  			</svg>
+  			<br>
+		    <div class="card-text"><div>${d_name }부서</div><div>${emp.grade } ${emp.name }님</div></div>
+		  </div>
+		</div>
+	</li>
   <li class="nav-item">
     <a class="nav-link active" href="listNoticeAction.do">공지사항</a>
   </li>
@@ -65,22 +91,20 @@
     <a class="nav-link" href="/testGit/Meetingroom/listReserveAction.do">회의실</a>
   </li>
   
+  
+  
 </ul>
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="#">Home</a></li>
-  <li class="breadcrumb-item"><a href="#">Library</a></li>
-  <li class="breadcrumb-item active">Data</li>
+  <li class="breadcrumb-item"><a href="/testGit/Login/mainAction.do">홈</a></li>
+  <li class="breadcrumb-item"><a href="listNoticeAction.do">공지사항</a></li>
 </ol>
 
 <div class="container">
-    <br>
-    <h1 class="text-center"><a>공지사항</a></h1>
-    <br>
-    <br>
+
     
-    <table class="table table-hover table-striped text-center" style="border: 1px solid;">
+    <table class="table table-hover">
         
-            <tr>
+            <tr class="table-dark">
                 <th>글번호</th>
                 <th>이미지</th>
                 <th>제목</th>
@@ -89,7 +113,7 @@
             </tr>
         
 <c:forEach var="board" items="${listModel.list }">
-		<tr>
+		<tr class="table-light">
 			<td>${board.b_no }</td>
 			<td>
 					<c:if test="${board.b_fname != null }">
@@ -122,6 +146,8 @@
     	<!-- 페이징 처리 부분 -->
 	
 	<!-- 이전영역 -->
+	<div class="pageBox">
+		<ul  class="pagination">
 	<c:if test="${listModel.startPage >= 6 }">
 		<a href="listNoticeAction.do?pageNum=${listModel.startPage - 1 }">[이전]</a>
 	</c:if>
@@ -136,18 +162,20 @@
 	<!-- 이후영역 -->
 	<c:if test="${listModel.endPage <  listModel.totalPageCount}">
 		<a href="listNoticeAction.do?pageNum=${listModel.endPage + 1 }">[이후]</a>
-	</c:if>
-	
-    	<form action="listNoticeAction.do" method="get">
+	</c:if>	
+	</ul>
+	</div>
+	<div class="searchBox">
+    <form action="listNoticeAction.do" method="get">
 		<input type="checkbox" name="area" value="b_title">제목
 		<input type="checkbox" name="area" value="e_no">사원번호
 		<input type="text" name="searchKey" size="10">
 		<input type="submit" value="검색">
-	    </form>	
-
+	</form>	
+	</div>
     <hr>
 
-    <a class="btn btn-outline-info float-right" href="insertForm.do?b_category=Notice">글쓰기</a>
+    <a class="badge bg-success" style="margin-left: 1450px;" href="insertForm.do?b_category=Notice">글쓰기</a>
 	
 </div>
 

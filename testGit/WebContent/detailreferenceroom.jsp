@@ -17,7 +17,7 @@
 <link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/bootstrap.css" type = "text/css">
 <style type="text/css">
 	
-	.ContentBox{
+.ContentBox{
 		border:  solid 2px;
 		border-radius: 10px;
 		width: 1100px;
@@ -27,10 +27,30 @@
 		
 	}
 	
-		.detail_box{
+	.detail_box{
 		margin-left: 20px;
-		margin-top: 600px;
+		margin-top: 50px;
 	}
+	
+	.bottom_box{
+		margin-top: 30px;
+        margin-left: 950px;  
+   }
+   
+   .b_title{
+      font-size: 30px;
+      color : black;
+   }
+   
+   img{
+   	width: 1000px;
+   	margin-left: 50px;
+   	margin-top: 30px;
+   }
+   
+   a{
+   	text-decoration: none;
+   }
 	
 </style>
 
@@ -75,11 +95,11 @@
 </nav>
 <ul class="nav nav-pills flex-column">
   <li class="nav-item">
-    <a class="nav-link active" href="listNoticeAction.do">공지사항</a>
+    <a class="nav-link " href="listNoticeAction.do">공지사항</a>
   </li>
 	
   <li class="nav-item">
-    <a class="nav-link" href="listReferenceroomAction.do">자료실</a>
+    <a class="nav-link active" href="listReferenceroomAction.do">자료실</a>
   </li>
 	
   <li class="nav-item">
@@ -88,21 +108,18 @@
   
 </ul>
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="#">Home</a></li>
-  <li class="breadcrumb-item"><a href="#">Library</a></li>
-  <li class="breadcrumb-item active">Data</li>
+  <li class="breadcrumb-item"><a href="/testGit/Login/mainAction.do">홈</a></li>
+  <li class="breadcrumb-item"><a href="listReferenceroomAction.do">자료실</a></li>
 </ol>
 
 <div class="ContentBox">
-	
-	<h2>글세부보기</h2>
-	<ul>
-		<li>${board.b_no }</li>
-		<li>${board.b_title }</li>
-		<li>${board.e_no }</li>
-		<li>${board.b_contents }</li>
-		<%-- <li><a href="/testGit/downloadboard.jsp?filename=${board.b_fname}">${board.b_fname}</a></li> --%>
-							<c:if test="${board.b_fname != null }">
+
+	<div class="bottom_box">
+		<a class="badge bg-success" href="updateReferenceroomForm.do?b_no=${board.b_no }">글수정</a>
+		<a class="badge bg-warning" href="deleteReferenceroomAction.do?b_no=${board.b_no }">삭제</a>
+	</div>
+		
+			<c:if test="${board.b_fname != null }">
 				<c:set var="head" value="${fn:substring(board.b_fname, 
 										0, fn:length(board.b_fname)-4) }"></c:set>
 				<c:set var="pattern" value="${fn:substring(board.b_fname, 
@@ -117,12 +134,12 @@
 					</c:otherwise>
 				</c:choose>
 			</c:if>
-	</ul>
-	<br>
+		<br>
 		
 	<div class="detail_box">
-	<a href="updateReferenceroomForm.do?b_no=${board.b_no }">글수정</a>
-	<a href="deleteReferenceroomAction.do?b_no=${board.b_no }">삭제</a>
+		<p class="b_title">${board.b_title }</p>
+		<p>${board.b_date }</p><br>
+		<p class="b_contents">${board.b_contents }</p>
 	</div>
 </div>
 
