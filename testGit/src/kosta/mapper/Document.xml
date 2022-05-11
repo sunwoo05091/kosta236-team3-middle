@@ -151,5 +151,14 @@
 			</where>
 		order by dc_no desc
 	</select>
+	
+	<!-- 결재선 추가 -->
+		<insert id="insertSignEmp" parameterType="Approver">
+			insert into approver(
+			ap_seq, e_no, ap_check, ap_date
+			)values(
+			ap_seq.nextval, #{e_no}, #{ap_check}, sysdate
+			)
+		</insert>
 
 </mapper>

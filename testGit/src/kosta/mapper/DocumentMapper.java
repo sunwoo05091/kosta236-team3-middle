@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.session.RowBounds;
 
+import kosta.domain.Approver;
 import kosta.domain.Document;
 import kosta.domain.DocumentSearch;
 
@@ -40,6 +41,8 @@ public interface DocumentMapper {
 	// 부서 문서함
 	List<Document> listDocumentSignCompleteDepartment(DocumentSearch search, RowBounds row);
 	
+	// 결재선 추가
+	int insertSignEmp(Approver approver);
 	
 	
 

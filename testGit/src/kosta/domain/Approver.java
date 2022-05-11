@@ -6,13 +6,13 @@ public class Approver implements Serializable {
 	
 	private int ap_seq;					// 결재순서
 	private int dc_no;						// 문서번호
-	private boolean ap_check;		// 결재유무
+	private char ap_check;			// 결재유무
 	private String ap_date;			// 결재일
 	private int e_no;						// 사원번호
 	
 	public Approver() {}
 
-	public Approver(int ap_seq, int dc_no, boolean ap_check, String ap_date, int e_no) {
+	public Approver(int ap_seq, int dc_no, char ap_check, String ap_date, int e_no) {
 		super();
 		this.ap_seq = ap_seq;
 		this.dc_no = dc_no;
@@ -37,11 +37,11 @@ public class Approver implements Serializable {
 		this.dc_no = dc_no;
 	}
 
-	public boolean isAp_check() {
+	public char getAp_check() {
 		return ap_check;
 	}
 
-	public void setAp_check(boolean ap_check) {
+	public void setAp_check(char ap_check) {
 		this.ap_check = ap_check;
 	}
 
@@ -66,7 +66,5 @@ public class Approver implements Serializable {
 		return "Approver [ap_seq=" + ap_seq + ", dc_no=" + dc_no + ", ap_check=" + ap_check + ", ap_date=" + ap_date
 				+ ", e_no=" + e_no + "]";
 	}
-	
-	
 	
 }
