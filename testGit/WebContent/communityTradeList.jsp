@@ -80,9 +80,7 @@
   
 </ul>
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="#">Home</a></li>
-  <li class="breadcrumb-item"><a href="#">Library</a></li>
-  <li class="breadcrumb-item active">Data</li>
+  <li class="breadcrumb-item"><a href="#">중고거래게시판</a></li>
 </ol>
 <a href="insertNoticeTradeFormAction.do" style="margin-left: 1430px;" class="badge bg-warning" >공지 등록</a><br>
 <table class="table table-hover" style="width :70%; margin-left: 350px; text-align: center;">
@@ -106,7 +104,7 @@
 		<tr class="table-danger">
 			<td>${notice.cm_no}</td>
 			<td><a style="font: red;"
-				href="detailTradeAction.do?cm_no=${notice.cm_no}">[공지]${notice.cm_title }</a></td>
+				href="detailClubAction.do?cm_no=${notice.cm_no}">[공지]${notice.cm_title }</a></td>
 			<td><fmt:parseDate var="dt" value="${notice.cm_date }"
 					pattern="yyyy-MM-dd HH:mm:ss" /> <fmt:formatDate value="${dt }"
 					pattern="yyyy/MM/dd" /></td>

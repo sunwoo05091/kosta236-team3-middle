@@ -78,6 +78,10 @@
 		font-size: 30px;
 		color : #fb6400;
 	}
+	
+	a{
+		text-decoration: none;
+	}
 </style>
 </head>
 <body background="ECF1F8">
@@ -130,15 +134,10 @@
   
 </ul>
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="#">Home</a></li>
-  <li class="breadcrumb-item"><a href="#">Library</a></li>
-  <li class="breadcrumb-item active">Data</li>
+  <li class="breadcrumb-item"><a href="#">중고거래게시판</a></li>
+  <li class="breadcrumb-item"><a href="#">${community.cm_title }</a></li>
 </ol>
-	<h2>글세부보기</h2>
-	
-	
 	<div class="ContentBox">
-		<h3>${community.cm_title }</h3>
 			<c:if test="${community.cm_fname != null }">
 				<c:set var="head" value="${fn:substring(community.cm_fname, 
 										0, fn:length(community.cm_fname)-4) }"></c:set>
