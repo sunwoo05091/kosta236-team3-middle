@@ -59,15 +59,15 @@
   </div>
 </nav>
 
-<ul class="nav nav-pills flex-column">
+<ul class="nav nav-pills flex-column" style="position: absolute;">
 	<li><a href="moveSchedule.do"><button type="button" class="btn btn-outline-primary">홈 </button></a></li><br>
 	<li><a href="insertForm.do"><button type="button" class="btn btn-outline-primary">일정 생성</button></a></li><br>
 	<li><a href="listAction.do"><button type="button" class="btn btn-outline-primary">전체 조회</button></a></li>
 	<hr style="border: solid 1px gray;">
 	<li>분류별 일정</li><br>
-	<li><a href="TypeScheduleAction.do?s_type=1">- 개인</a></li><br>
-	<li><a href="TypeScheduleAction.do?s_type=2">- 미팅</a></li><br>
-	<li><a href="TypeScheduleAction.do?s_type=3">- 회의</a></li><br>
+	<li style="text-decoration: none;"><a href="TypeScheduleAction.do?s_type=1">- 개인</a></li><br>
+	<li style="text-decoration: none;"><a href="TypeScheduleAction.do?s_type=2">- 미팅</a></li><br>
+	<li style="text-decoration: none;"><a href="TypeScheduleAction.do?s_type=3">- 회의</a></li><br>
 </ul>
 
  <table class="w3-table w3-striped w3-bordered" style="position: relative; width: 1000px; margin-left: 300px;">
@@ -97,8 +97,9 @@
     	</tr>
     	</c:forEach>
     </table>
+    <br>
     
-<div style="margin-left: 700px;">    
+<div style="margin-left: 750px;">    
 	<c:if test="${ScheduleListModel.startPage >= 6 }">
 		<a href="SchedulePageAction.do?pageNum=${ScheduleListModel.startPage-1 }">[이전]</a>
 	</c:if>
