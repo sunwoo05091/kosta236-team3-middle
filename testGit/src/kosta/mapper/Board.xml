@@ -61,12 +61,15 @@
 	
 	
 	<select id="detailBoard" resultType="Board" parameterType="int">
-		select b_no,b_title,e_no,b_contents, b_fname from board where b_no = #{b_no}
+		select b_no,b_title,e_no,b_contents, b_fname, b_date from board where b_no = #{b_no}
 	</select>
 	
 	<update id="updateBoard" parameterType="Board">
 		update board set
 		b_title = #{b_title}, b_contents = #{b_contents}
+		<if test ="b_fname != null">
+			,b_fname=#{b_fname}
+		</if>
 		where b_no = #{b_no}
 	</update>
 	
