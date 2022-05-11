@@ -1,7 +1,7 @@
 <%@ page import="kosta.domain.PrivateInfo" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<%
+<%-- <%
   //테스트 부분
   String testId = "testId";
   session.setAttribute("userId", testId);
@@ -17,7 +17,7 @@
 //  }
 
 
-%>
+%> --%>
 
 <html>
 <head>
@@ -25,7 +25,7 @@
 
   <script>
     <%--GET 방식--%>
-    location.href = "/testGit/mypage/init.do"
+    location.href = "/testGit/myPage/init.do"
   </script>
 </head>
 <body>

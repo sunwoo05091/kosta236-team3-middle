@@ -25,10 +25,10 @@ import kosta.action.OrganizationChartAction;
 import kosta.action.UpdateEmpAction;
 
 @WebServlet("/Login/*")
-public class Logincontroller extends HttpServlet {
+public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public Logincontroller() {
+    public LoginController() {
         super();
     }
 
