@@ -9,7 +9,6 @@
 		<typeAlias type="kosta.domain.Reserve" alias="Reserve"/>
 		<typeAlias type="kosta.domain.MeetingRoom" alias="MeetingRoom"/>
 		<typeAlias type="kosta.domain.Search" alias="Search"/>
-<<<<<<< HEAD
 		<typeAlias type="kosta.domain.Approver" alias="Approver"/>
 		<typeAlias type="kosta.domain.Document" alias="Document"/>
 		<typeAlias type="kosta.domain.Receiver" alias="Receiver"/>
@@ -22,30 +21,13 @@
 		<typeAlias type="kosta.domain.Emp" alias = "Emp"/>
 		<typeAlias type="kosta.domain.Login" alias = "Login"/>
 		<typeAlias type="kosta.domain.Schedule" alias = "schedule"/>		
-        <typeAlias type="kosta.MyPage.PrivateInfo" alias="PrivateInfo"/>
-        <typeAlias type="kosta.MyPage.PayStub" alias="PayStub"/>
-        <typeAlias type="kosta.MyPage.PhoneBook" alias="PhoneBook"/>
-        <typeAlias type="kosta.MyPage.AnnualLeave" alias="AnnualLeave"/>
-        <typeAlias type="kosta.MyPage.Attendance" alias="Attendance"/>
+        
   
-=======
-		<typeAlias type="kosta.domain.Schedule" alias = "schedule"/>
 	    <typeAlias type="kosta.domain.MyPage.Attendance" alias="Attendance"/>
 	    <typeAlias type="kosta.domain.MyPage.PrivateInfo" alias="PrivateInfo"/>
 	    <typeAlias type="kosta.domain.MyPage.PayStub" alias="PayStub"/>
 	    <typeAlias type="kosta.domain.MyPage.PhoneBook" alias="PhoneBook"/>
 	    <typeAlias type="kosta.domain.MyPage.AnnualLeave" alias="AnnualLeave"/>
-	    <typeAlias type="kosta.domain.Approver" alias="Approver"/>
-	    <typeAlias type="kosta.domain.Document" alias="Document"/>
-	    <typeAlias type="kosta.domain.Receiver" alias="Receiver"/>
-	    <typeAlias type="kosta.domain.Referrer" alias="Referrer"/>
-	    <typeAlias type="kosta.domain.DocumentSearch" alias="DocumentSearch"/>
-	    <typeAlias type="kosta.domain.DocumentList" alias="DocumentList"/>
-	    <typeAlias type="kosta.domain.Emp" alias = "Emp"/>
-        <typeAlias type="kosta.domain.Login" alias = "Login"/>
-        <typeAlias type="kosta.domain.Community" alias="Community"/>
-        <typeAlias type="kosta.domain.Reply" alias="Reply"/>
->>>>>>> branch 'sub3' of https://github.com/sunwoo05091/kosta236-team3-middle.git
 	</typeAliases>
 	
 	<environments default="development">
@@ -60,19 +42,13 @@
 	<mappers>
 		<mapper resource="kosta/mapper/Board.xml"/>
 		<mapper resource="kosta/mapper/MeetingRoom.xml"/>
-<<<<<<< HEAD
 		<mapper resource="kosta/mapper/Document.xml"/>
 		<mapper resource="kosta/mapper/Community.xml"/>
 		<mapper resource = "kosta/mapper/Login.xml"/>
 		<mapper resource = "kosta/mapper/Schedule.xml"/>
-		<mapper resource="kosta/MyPage/MapperDetail.xml"/>
-=======
-		<mapper resource="kosta/mapper/Schedule.xml"/>
+		
 		<mapper resource="kosta/mapper/MyPage/MapperDetail.xml"/>
-		<mapper resource="kosta/mapper/Document.xml"/>
-		<mapper resource="kosta/mapper/Login.xml"/>
-		<mapper resource="kosta/mapper/Community.xml"/>
->>>>>>> branch 'sub3' of https://github.com/sunwoo05091/kosta236-team3-middle.git
+		
 	</mappers>
 	
 </configuration>
