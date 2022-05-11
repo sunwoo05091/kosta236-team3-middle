@@ -21,16 +21,36 @@
 		border:  solid 2px;
 		border-radius: 10px;
 		width: 1100px;
-		height: 900px;
+		height: 1500px;
 		margin-left: 500px;
 		background-color: white;
 		
 	}
 	
-		.detail_box{
+	.detail_box{
 		margin-left: 20px;
-		margin-top: 600px;
+		margin-top: 50px;
 	}
+	
+	.bottom_box{
+		margin-top: 30px;
+        margin-left: 950px;  
+   }
+   
+   .b_title{
+      font-size: 30px;
+      color : black;
+   }
+   
+   img{
+   	width: 1000px;
+   	margin-left: 50px;
+   	margin-top: 30px;
+   }
+   
+   a{
+   	text-decoration: none;
+   }
 	
 </style>
 
@@ -75,7 +95,7 @@
 </nav>
 <ul class="nav nav-pills flex-column">
   <li class="nav-item">
-    <a class="nav-link active" href="/testGit/board/listNoticeAction.do">공지사항</a>
+    <a class="nav-link " href="/testGit/board/listNoticeAction.do">공지사항</a>
   </li>
 	
   <li class="nav-item">
@@ -83,32 +103,36 @@
   </li>
 	
   <li class="nav-item">
-    <a class="nav-link" href="/testGit/Meetingroom/listReserveAction.do">회의실</a>
+    <a class="nav-link active" href="/testGit/Meetingroom/listReserveAction.do">회의실</a>
   </li>
   
 </ul>
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="#">Home</a></li>
-  <li class="breadcrumb-item"><a href="#">Library</a></li>
-  <li class="breadcrumb-item active">Data</li>
+  <li class="breadcrumb-item"><a href="/testGit/Login/mainAction.do">홈</a></li>
+  <li class="breadcrumb-item"><a href="/testGit/Meetingroom/listReserveAction.do">회의실</a></li>
 </ol>
 
 <div class="ContentBox">
-	
-	<h2>글세부보기</h2>
-	<ul>
+	<div class="bottom_box">
+		<a class="badge bg-success" href="updateReserveForm.do?r_no=${reserve.r_no }">글수정</a>
+		<a class="badge bg-warning" href="deleteReserveAction.do?r_no=${reserve.r_no }">삭제</a>
+	</div>
+<%-- 	<ul>
 		<li>${reserve.r_no }</li>
 		<li>${reserve.meetingtitle }</li>
 		<li>${reserve.r_starttime }</li>
 		<li>${reserve.r_endtime }</li>
 		<li>${reserve.mr_no }</li>
-	</ul>
+	</ul> --%>
 	<br>
 		
 	<div class="detail_box">
-	<a href="updateReserveForm.do?r_no=${reserve.r_no }">글수정</a>
-	<a href="deleteReserveAction.do?r_no=${reserve.r_no }">삭제</a>
+		<p class="meetingtitle">${reserve.meetingtitle }</p>
+		<p>${reserve.r_date }</p><br>
+		<p class="r_starttime">시작시간: ${reserve.r_starttime }</p>
+		<p class="r_endtime">종료시간: ${reserve.r_endtime }</p>
 	</div>
+	
 </div>
 
 </body>

@@ -12,13 +12,14 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/bootstrap.min.css" type = "text/css">
-<link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/bootstrap.css?ver=2" type = "text/css">
+<link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/bootstrap.css?ver=3" type = "text/css">
 <link rel = "stylesheet" href="Resource/CSS/bootstrap.min.css" type = "text/css">
 <link rel = "stylesheet" href="Resource/CSS/bootstrap.css" type = "text/css">
 <style type="text/css">
 	.pageBox{
 		width: 700px;
-		margin-left: 600px;
+		margin-left: 620px;
+		
 	}
 	
 	a{
@@ -52,7 +53,7 @@
           <a class="nav-link" href="/testGit/schedule/moveSchedule.do">일정관리</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/testGit/Meetingroom/listNoticeAction.do">공지사항</a>
+          <a class="nav-link" href="/testGit/board/listNoticeAction.do">공지사항</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/testGit/community/listCommunityAction.do">커뮤니티</a>
@@ -68,6 +69,18 @@
   </div>
 </nav>
 <ul class="nav nav-pills flex-column">
+	<li>
+		<div class="card bg-light mb-3" style="max-width: 20rem;">
+		  <div class="card-body">
+		    <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="130" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+    			<rect width="100%" height="100%" fill="#868e96"></rect>
+    			<text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+  			</svg>
+  			<br>
+		    <div class="card-text" style="color: #7b95cc;"><div>인사부서</div><div>${emp.grade } ${emp.name }님</div></div>
+		  </div>
+		</div>
+	</li>
   <li class="nav-item">
     <a class="nav-link active" href="listCommunityAction.do">중고거래게시판</a>
   </li>
@@ -159,8 +172,8 @@
 	
 	<div class="searchBox">
 		<form action="listCommunityCarfullAction.do" method="get">
-			<input type="checkbox" name="area" value="cm_title"> 제목
-			<input type="checkbox" name="area" value="e_no"> 작성자
+			<input type="checkbox" name="area" value="cm_title"><span style="color: black;"> 제목 </span>
+			<input type="checkbox" name="area" value="e_no"><span style="color: black;"> 작성자 </span>
 			<input type="text" name="searchKey" size="30">
 			<input type="submit" value="검색">
 		</form>

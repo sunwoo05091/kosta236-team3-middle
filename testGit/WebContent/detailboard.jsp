@@ -27,10 +27,30 @@
 		
 	}
 	
-		.detail_box{
+	.detail_box{
 		margin-left: 20px;
-		margin-top: 600px;
+		margin-top: 50px;
 	}
+	
+	.bottom_box{
+		margin-top: 30px;
+        margin-left: 950px;  
+   }
+   
+   .b_title{
+      font-size: 30px;
+      color : black;
+   }
+   
+   img{
+   	width: 1000px;
+   	margin-left: 50px;
+   	margin-top: 30px;
+   }
+   
+   a{
+   	text-decoration: none;
+   }
 	
 </style>
 
@@ -58,7 +78,7 @@
           <a class="nav-link" href="/testGit/schedule/moveSchedule.do">일정관리</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/testGit/Meetingroom/listNoticeAction.do">공지사항</a>
+          <a class="nav-link" href="/testGit/board/listNoticeAction.do">공지사항</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/testGit/community/listCommunityAction.do">커뮤니티</a>
@@ -88,28 +108,26 @@
   
 </ul>
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="#">Home</a></li>
-  <li class="breadcrumb-item"><a href="#">Library</a></li>
-  <li class="breadcrumb-item active">Data</li>
+  <li class="breadcrumb-item"><a href="/testGit/Login/mainAction.do">홈</a></li>
+  <li class="breadcrumb-item"><a href="listNoticeAction.do">공지사항</a></li>
 </ol>
 
 <div class="ContentBox">
-	
-	<h2>글세부보기</h2>
-	<ul>
-		<li>${board.b_no }</li>
-		<li>${board.b_title }</li>
-		<li>${board.e_no }</li>
-		<li>${board.b_contents }</li>
-		<%-- <li><a href="/testGit/downloadboard.jsp?filename=${board.b_fname}">${board.b_fname}</a></li> --%>
-					<c:if test="${board.b_fname != null }">
-				<c:set var="head" value="${fn:substring(board.b_fname, 
+	<div class="bottom_box">
+		<a class="badge bg-success" href="updateBoardForm.do?b_no=${board.b_no }">글수정</a>
+		<a class="badge bg-warning" href="deleteNoticeAction.do?b_no=${board.b_no }">삭제</a>
+	</div>
+			<c:if test="${board.b_fname != null }">
+				<c:set var="head"
+					value="${fn:substring(board.b_fname, 
 										0, fn:length(board.b_fname)-4) }"></c:set>
-				<c:set var="pattern" value="${fn:substring(board.b_fname, 
+				<c:set var="pattern"
+					value="${fn:substring(board.b_fname, 
 				fn:length(head) +1, fn:length(board.b_fname)) }"></c:set>
-					
+
 				<c:choose>
-					<c:when test="${pattern == 'jpg' || pattern == 'gif' || pattern =='png' }">
+					<c:when
+						test="${pattern == 'jpg' || pattern == 'gif' || pattern =='png' }">
 						<img src="/testGit/upload/${head }.${pattern}">
 					</c:when>
 					<c:otherwise>
@@ -117,12 +135,13 @@
 					</c:otherwise>
 				</c:choose>
 			</c:if>
-	</ul>
-	<br>
+
+			<br>
 		
 	<div class="detail_box">
-		<a href="updateBoardForm.do?b_no=${board.b_no }">글수정</a>
-		<a href="deleteNoticeAction.do?b_no=${board.b_no }">삭제</a>
+		<p class="b_title">${board.b_title }</p>
+		<p>${board.b_date }</p><br>
+		<p class="b_contents">${board.b_contents }</p>
 	</div>
 </div>
 

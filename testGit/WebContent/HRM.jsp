@@ -79,7 +79,7 @@
 </ol>
 <table class="table table-hover">
 <thead>
-    <tr class="table-active">
+    <tr class="table-dark">
       <th class = "th_e_no" scope="col">사번</th>
       <th class = "th_id" scope="col">아이디</th>
       <th class = "th_name" scope="col">이름</th>
@@ -93,7 +93,7 @@
 <tbody>
 	<c:forEach var = "emp" items = "${list }">
 		<c:if test="${emp.signupcheck == 0 }">
-			<tr class="table-secondary">
+			<tr class="table-light">
 		      <td scope="row">${emp.e_no }</td>
 		      <td>${emp.id }</td>
 		      <td>${emp.name }</td>

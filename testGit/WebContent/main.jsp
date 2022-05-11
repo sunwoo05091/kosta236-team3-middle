@@ -12,6 +12,11 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/Resource/js/login.js?ver=1"></script>
 <link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/bootstrap.min.css" type = "text/css">
 <link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/bootstrap.css?ver=6" type = "text/css">
+<style type = "text/css">
+a{
+text-decoration: none;
+}
+</style>
 </head>
 <body onload = "printClock()">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -51,18 +56,18 @@
   </div>
 </nav>
 <ul class="nav nav-pills flex-column">
-	   <li>
-      <div class="card bg-light mb-3" style="max-width: 20rem;">
-        <div class="card-body">
-          <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="130" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
-             <rect width="100%" height="100%" fill="#868e96"></rect>
-             <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
-           </svg>
-           <br>
-          <div class="card-text"><div>${d_name }부서</div><div>${emp.grade } ${emp.name }님</div></div>
-        </div>
-      </div>
-   </li>
+	<li>	
+		<div class="card bg-light mb-3" style="max-width: 20rem;">
+		  <div class="card-body">
+		    <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="130" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+    			<rect width="100%" height="100%" fill="#868e96"></rect>
+    			<text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+  			</svg>
+  			<br>
+		    <div class="card-text"><div>${d_name }부서</div><div>${emp.grade } ${emp.name }님</div></div>
+		  </div>
+		</div>
+	</li>
 	<li>
 	<div class="card bg-light mb-3" style="max-width: 20rem;">
 	    	<div  style="border:1px solid #dedede; width:100%; height:60px; line-height:50px; color:#666;font-size:50px; text-align:center;" id="clock">
@@ -162,13 +167,13 @@
   <div class="card-body">
   <ul>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="#"> 개인정보</a>
  	 </li>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="#"> 급여명세서</a>
  	 </li>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="#"> 주소록</a>
  	 </li>
   </ul>
   </div>
@@ -184,10 +189,10 @@
    	 	<a class="card-text" href="listSignUpApproveAction.do"> 계정신청승인</a>
  	 </li>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="#"></a>
  	 </li>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="#"></a>
  	 </li>
   </ul>
   </div>
