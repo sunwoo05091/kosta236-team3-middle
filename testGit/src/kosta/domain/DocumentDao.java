@@ -224,6 +224,29 @@ public class DocumentDao {
 	}
 	
 	
+	// 결재선 추가
+		public int insertSignEmp(Approver approver) {
+			SqlSession sqlSession = getSqlSessionFactory().openSession(); 
+			int re = -1;
+			
+			try {
+				re = sqlSession.getMapper(DocumentMapper.class).insertSignEmp(approver);
+				if(re>0) {
+					sqlSession.commit();
+				}else {
+					sqlSession.rollback();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				if(sqlSession != null) {
+					sqlSession.close();
+				}
+			}		
+			
+			return re;		
+		}	
+	
 	
 
 }

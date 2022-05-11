@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
+import kosta.domain.Approver;
 import kosta.domain.Document;
 import kosta.domain.DocumentDao;
 import kosta.domain.DocumentList;
@@ -366,6 +367,19 @@ public class DocumentService {
 			
 			return documentList;
 		}
+		
+		// 결재선 추가
+		public int insertSignEmpService(HttpServletRequest request)throws Exception {
+			request.setCharacterEncoding("utf-8");
+			
+			Approver approver = new Approver();
+			approver.setE_no(Integer.parseInt((String) request.getParameter("e_no")));						// 사원번호
+			approver.setAp_check((char) Integer.parseInt(request.getParameter("ap_check")));		// 결재유무
+			
+			
+			return dao.insertSignEmp(approver);
+		}
+
 	
 
 }
