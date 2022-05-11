@@ -46,7 +46,7 @@
 		<mapper resource = "kosta/mapper/Login.xml"/>
 		<mapper resource = "kosta/mapper/Schedule.xml"/>
 		
-		<mapper resource="kosta/mapper/MyPage/MapperDetail.xml"/>
+		<mapper resource="kosta/mapper/MapperDetail.xml"/>
 		
 	</mappers>
 	

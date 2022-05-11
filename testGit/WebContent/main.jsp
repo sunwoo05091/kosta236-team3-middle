@@ -12,6 +12,11 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/Resource/js/login.js?ver=1"></script>
 <link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/bootstrap.min.css" type = "text/css">
 <link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/bootstrap.css?ver=6" type = "text/css">
+<style type = "text/css">
+a{
+text-decoration: none;
+}
+</style>
 </head>
 <body onload = "printClock()">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -162,13 +167,13 @@
   <div class="card-body">
   <ul>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="#"> 개인정보</a>
  	 </li>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="#"> 급여명세서</a>
  	 </li>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="#"> 주소록</a>
  	 </li>
   </ul>
   </div>
@@ -184,10 +189,10 @@
    	 	<a class="card-text" href="listSignUpApproveAction.do"> 계정신청승인</a>
  	 </li>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="#"></a>
  	 </li>
 	  <li>
-   	 	<a class="card-text" href="#"> 문서관리</a>
+   	 	<a class="card-text" href="#"></a>
  	 </li>
   </ul>
   </div>
