@@ -15,6 +15,19 @@
 <link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/bootstrap.min.css" type = "text/css">
 <link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/bootstrap.css?ver=4" type = "text/css">
 </head>
+
+<style type="text/css">
+   .pageBox{
+      width: 700px;
+      margin-left: 500px;
+      padding: 20px;
+   }
+   
+   .searchBox{
+     margin-left: 600px;
+   }
+</style>
+
 <body onload = "printClock()">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
@@ -53,6 +66,18 @@
   </div>
 </nav>
 <ul class="nav nav-pills flex-column">
+<li>
+      <div class="card bg-light mb-3" style="max-width: 20rem;">
+        <div class="card-body">
+          <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="130" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+             <rect width="100%" height="100%" fill="#868e96"></rect>
+             <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+           </svg>
+           <br>
+          <div class="card-text"><div>${d_name }부서</div><div>${emp.grade } ${emp.name }님</div></div>
+        </div>
+      </div>
+   </li>
   <li class="nav-item">
     <a class="nav-link active" href="#">전자결재</a>
       <li class="nav-item">
@@ -73,10 +98,10 @@
   <li class="breadcrumb-item"><a href="/testGit/Login/mainAction.do">메인페이지</a></li>
 </ol>
 
-<div style="width: 1200px; height: 300px; margin: auto;">
-<table class="table table-bordered">
+<div>
+<table class="table table-hover" style="position: relative; margin: auto;">
   <thead>
-    <tr>
+    <tr class="table-dark">
       <th scope="col">문서번호</th>
       <th scope="col">제목</th>
       <th scope="col">작성자</th>
@@ -88,7 +113,7 @@
   <tbody>
 
 		<c:forEach var="document" items="${documentList.list }">
-		<tr>
+		<tr class="table-light">
 			<td><a href="detailAction.do?dc_no=${document.dc_no }">${document.dc_no }</a></td>
 		    <td>${document.dc_title }</td>
 		    <td>${document.grade }  ${document.name }</td>
@@ -103,32 +128,32 @@
 </table>
 
 	<!-- 페이징 처리 -->
-	<div>
-  <ul class="pagination">
-    <li class="page-item disabled">
+	<div class="pageBox">
+		<ul  class="pagination">
 	<c:if test="${documentList.startPage >= 6 }">
-	    <li class="page-item">
+	    	<li class="page-item active">
 		<a class="page-link" href="listDocumentSignCompleteAction.do?pageNum=${documentList.startPage - 1 }">[이전]</a>
 		</li>
 	</c:if>
 	
 	<c:forEach var="pageNo" begin="${documentList.startPage }" end="${documentList.endPage }">
 		<c:if test="${documentList.requestPage == pageNo }"></c:if>
-		<li class="page-item">
+		<li class="page-item active">
 		<a class="page-link" href="listDocumentSignCompleteAction.do?pageNum=${pageNo }">[${pageNo }]</a>
 		</li>
 		<c:if test="${documentList.requestPage == pageNo }"></c:if>
 	</c:forEach>
 	
 	<c:if test="${documentList.endPage < documentList.totalPageCount }">
-		 <li class="page-item">
+		 <li class="page-item active">
 		<a class="page-link" href="listDocumentSignCompleteAction.do?pageNum=${documentList.endPage + 1 }">[이후]</a>
 		</li>
 	</c:if>
-	</li>
 	</ul>
 	</div>
+</div>
 
+<div class="searchBox">
 <form action="listDocumentSignCompleteAction.do" method="get">
 	<input class="form-check-input" type="checkbox" name="area" value="dc_no">문서번호
 	<input class="form-check-input" type="checkbox" name="area" value="dc_title">제목
@@ -137,10 +162,9 @@
 	<div class="form-group">
 	<div class="input-group mb-3" style="width: 500px; height: 50px;">
 	<input type="text" class="form-control" name="searchKey" placeholder="검색어를 입력" aria-describedby="button-addon2">
-	<button type="submit" class="btn">검색</button>
+	<button type="submit" class="btn" style="margin-left: 100px;">검색</button>
 	</div>
 	</div>
-	
 </form>
 </div>
 
