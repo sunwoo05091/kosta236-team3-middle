@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
+<%-- <%
     if (session.getAttribute("userId") == null) {
         System.out.println("userId is empty!");
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/MyPage/InitMyPage.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/myPage/InitMyPage.jsp");
         requestDispatcher.forward(request, response);
         System.out.println("빙글빙글");
     }
@@ -17,7 +17,7 @@
     }
     System.out.println("여기있다!");
     session.setAttribute("trial", false);
-%>
+%> --%>
 <html>
 <head>
     <meta charset="EUC-KR">

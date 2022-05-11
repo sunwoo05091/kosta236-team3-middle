@@ -1,7 +1,6 @@
 package kosta.controller;
 
 import kosta.action.*;
-import kosta.action.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,8 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/mypage/*")
+@WebServlet("/myPage/*")
 public class MyPageController extends HttpServlet {
+	
+	private static final long serialVersionUID = 1L;
+    
+    public MyPageController() {
+        super();
+    }
     //request.getMethod() : GET, POST 반환
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
