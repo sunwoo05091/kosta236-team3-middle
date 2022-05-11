@@ -19,7 +19,7 @@ public class MyPageDao {
     }
 
     public SqlSessionFactory getSqlSessionFactory() {
-        String resource = "kosta/resources/mybatis-config-MyPage.xml";
+        String resource = "mybatis-config.xml";
         InputStream inputStream = null;
         try {
             inputStream = Resources.getResourceAsStream(resource);

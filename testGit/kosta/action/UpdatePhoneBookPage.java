@@ -18,7 +18,7 @@ public class UpdatePhoneBookPage implements Action {
         PhoneBook phoneBook = myPageService.selectPhoneBook(pb_No);
         request.setAttribute("phoneBook", phoneBook);
 
-        actionForward.setPath("/views/MyPage/UpdatePhoneBook.jsp");
+        actionForward.setPath("/UpdatePhoneBook.jsp");
 
         return actionForward;
     }

@@ -28,7 +28,7 @@ public class listAnnualLeave implements Action {
         request.setAttribute("listAnnualLeave", listDB);
 
         actionForward.setRedirect(false);
-        actionForward.setPath("/views/MyPage/ListAnnualLeave.jsp");
+        actionForward.setPath("/ListAnnualLeave.jsp");
 
         return actionForward;
     }

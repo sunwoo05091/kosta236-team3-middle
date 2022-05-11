@@ -25,7 +25,7 @@ public class DetailPayStub implements Action {
 
         request.setAttribute("privateInfo", privateInfo);
         request.setAttribute("detailPayStub", detailPayStub);
-        actionForward.setPath("/views/MyPage/DetailPayStub.jsp");
+        actionForward.setPath("/DetailPayStub.jsp");
 
         System.out.println(detailPayStub.getIncomeTax());
 

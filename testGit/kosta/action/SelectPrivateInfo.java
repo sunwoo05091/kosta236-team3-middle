@@ -16,7 +16,7 @@ public class SelectPrivateInfo implements Action {
         PrivateInfo myPagePrivateInfo = myPageService.getUserInfo(userId);
 
         request.setAttribute("privateInfo", myPagePrivateInfo);
-        actionForward.setPath("/views/MyPage/PrivateInfo.jsp");
+        actionForward.setPath("/PrivateInfo.jsp");
 
         return actionForward;
     }

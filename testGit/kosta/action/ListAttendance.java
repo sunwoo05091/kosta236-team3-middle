@@ -19,7 +19,7 @@ public class ListAttendance implements Action {
         request.setAttribute("listAttendance", listDB);
 
         actionForward.setRedirect(false);
-        actionForward.setPath("/views/MyPage/ListAttendance.jsp");
+        actionForward.setPath("/ListAttendance.jsp");
 
         return actionForward;
     }

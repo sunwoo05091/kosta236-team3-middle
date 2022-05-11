@@ -28,7 +28,7 @@ public class UpdatePrivateInfo implements Action {
 
         request.getSession().setAttribute("userId", userId);
         request.setAttribute("privateInfo", privateInfo);
-        actionForward.setPath("/views/MyPage/PrivateInfo.jsp");
+        actionForward.setPath("/PrivateInfo.jsp");
         return actionForward;
     }
 }
