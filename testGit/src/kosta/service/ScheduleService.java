@@ -75,42 +75,43 @@ public class ScheduleService {
 		return model;
 	}
 	public ScheduleListModel schedulePage(HttpServletRequest request) {
+
 		//startPage, endPage, startRow, endRow
 		
-		//총글개수
-		int totalCount = dao.countSchedule();
-		
-		//총페이지수
-		int totalPageCount = totalCount/PAGE_SIZE;
-		if(totalCount%PAGE_SIZE > 0) {
-			totalPageCount++;
-		}
-		
-		//현재페이지
-		String pageNum = request.getParameter("pageNum");
-		if(pageNum == null) {
-			pageNum = "1";
-		}		
-		
-		int requestPage = Integer.parseInt(pageNum);
-		
-		//startPage = 현재페이지 - (현재페이지 - 1)%5  => ex)  14 - (14 -1)%5 = 11
-		int startPage = requestPage - (requestPage - 1) % 5;
+				//총글개수
+				int totalCount = dao.countMainPage();
 				
-		//endPage 
-		int endPage = startPage + 4;
-		if(endPage > totalPageCount) {
-			endPage = totalPageCount;
-		}
+				//총페이지수
+				int totalPageCount = totalCount/PAGE_SIZE;
+				if(totalCount%PAGE_SIZE > 0) {
+					totalPageCount++;
+				}
+				
+				//현재페이지
+				String pageNum = request.getParameter("pageNum");
+				if(pageNum == null) {
+					pageNum = "1";
+				}		
+				
+				int requestPage = Integer.parseInt(pageNum);
+				
+				//startPage = 현재페이지 - (현재페이지 - 1)%5  => ex)  14 - (14 -1)%5 = 11
+				int startPage = requestPage - (requestPage - 1) % 5;
+						
+				//endPage 
+				int endPage = startPage + 4;
+				if(endPage > totalPageCount) {
+					endPage = totalPageCount;
+				}
+				
+				//startRow = (현재페이지 - 1) * 페이지당 글개수
+				int startRow = (requestPage - 1) * PAGE_SIZE;
+				
+				List<Schedule> list = dao.todaySchedule(startRow);
+				
+				ScheduleListModel model = new ScheduleListModel(list, requestPage, totalPageCount, startPage, endPage);
 		
-		//startRow = (현재페이지 - 1) * 페이지당 글개수
-		int startRow = (requestPage - 1) * PAGE_SIZE;
-		
-		List<Schedule> list = dao.todaySchedule(startRow);
-		
-		ScheduleListModel model = new ScheduleListModel(list, requestPage, totalPageCount, startPage, endPage);
-
-		return model;
+				return model;
 	}
 	
 	public Schedule detailSchedule(int seq)throws Exception{
@@ -139,6 +140,7 @@ public class ScheduleService {
 	
 	public List<Schedule> typeSchedule(HttpServletRequest request) {
 		int no = Integer.parseInt(request.getParameter("s_type"));
+		
 		String s_type = null;
 
 		switch (no) {
