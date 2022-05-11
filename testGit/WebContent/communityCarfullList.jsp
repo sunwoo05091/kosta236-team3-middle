@@ -84,9 +84,7 @@
   
 </ul>
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="#">Home</a></li>
-  <li class="breadcrumb-item"><a href="#">Library</a></li>
-  <li class="breadcrumb-item active">Data</li>
+  <li class="breadcrumb-item"><a href="#">카풀게시판</a></li>
 </ol>
 <a href="insertNoticeTradeFormAction.do" style="margin-left: 1430px;" class="badge bg-warning" >공지 등록</a><br>
 <table class="table table-hover" style="width :70%; margin-left: 350px; text-align: center;">
