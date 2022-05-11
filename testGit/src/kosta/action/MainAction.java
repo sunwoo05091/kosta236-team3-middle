@@ -13,6 +13,7 @@ public class MainAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		LoginService service = LoginService.getInstance();
 		ActionForward forward = new ActionForward();
+		
 		HttpSession session = request.getSession();
 		Emp emp = (Emp)session.getAttribute("emp");
 		request.setAttribute("emp", emp);
