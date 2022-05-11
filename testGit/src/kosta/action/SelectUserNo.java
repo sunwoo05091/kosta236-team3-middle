@@ -21,7 +21,7 @@ public class SelectUserNo implements Action {
         request.getSession().setAttribute("d_no", myPagePrivateInfo.getD_No());
 
 //        actionForward.setRedirect(false);
-        actionForward.setPath("/views/MyPage/InitMyPage.jsp");
+        actionForward.setPath("/InitMyPage.jsp");
 
         return actionForward;
     }

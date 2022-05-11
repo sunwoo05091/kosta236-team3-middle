@@ -91,7 +91,7 @@ public class ListPayStub implements Action {
         }
         request.setAttribute("listPayStub", listDB);
 
-        actionForward.setPath("/views/MyPage/ListPayStub.jsp");
+        actionForward.setPath("/ListPayStub.jsp");
 
         return actionForward;
     }

@@ -18,7 +18,7 @@ public class ListPhoneBook implements Action {
 
         request.setAttribute("listPhoneBook", listDB);
 
-        actionForward.setPath("/views/MyPage/ListPhoneBook.jsp");
+        actionForward.setPath("/ListPhoneBook.jsp");
 
         return actionForward;
     }
