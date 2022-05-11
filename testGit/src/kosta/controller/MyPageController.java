@@ -1,6 +1,7 @@
 package kosta.controller;
 
-import kosta.action.MyPage.*;
+import kosta.action.*;
+import kosta.action.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,14 +22,14 @@ public class MyPageController extends HttpServlet {
         System.out.println("requestURI : " + requestURI);
         System.out.println("contextPath : " + contextPath);
 
-        String command = requestURI.substring("/mypage/".length());
+        String command = requestURI.substring((contextPath + "/mypage/").length());
 
         ActionForward actionForward = new ActionForward();
 
         System.out.println("command : " + command);
         Action action = null;
 
-        if (command.equals("init")) {
+        if (command.equals("init.do")) {
             action = new InitPage();
             try {
                 actionForward = action.execute(request, response);
@@ -46,7 +47,7 @@ public class MyPageController extends HttpServlet {
             }
         }
 
-        if (command.equals("private-info")) {
+        if (command.equals("private-info.do")) {
             action = new SelectPrivateInfo();
             System.out.println("selectPrivateInfo.do");
             try {
@@ -56,7 +57,7 @@ public class MyPageController extends HttpServlet {
             }
         }
 
-        if (command.equals("attendance")) {
+        if (command.equals("attendance.do")) {
             action = new ListAttendance();
             System.out.println("attendance");
             try {
@@ -66,7 +67,7 @@ public class MyPageController extends HttpServlet {
             }
         }
 
-        if (command.equals("annual-leave")) {
+        if (command.equals("annual-leave.do")) {
             action = new listAnnualLeave();
             try {
                 actionForward = action.execute(request, response);
@@ -75,7 +76,7 @@ public class MyPageController extends HttpServlet {
             }
         }
 
-        if (command.equals("insertAnnualLeave")) {
+        if (command.equals("insertAnnualLeave.do")) {
             action = new insertAnnualLeavePage();
             try {
                 actionForward = action.execute(request, response);
@@ -84,7 +85,7 @@ public class MyPageController extends HttpServlet {
             }
         }
 
-        if (command.equals("paystub")) {
+        if (command.equals("paystub.do")) {
             action = new ListPayStub();
             try {
                 actionForward = action.execute(request, response);
@@ -103,7 +104,7 @@ public class MyPageController extends HttpServlet {
             }
         }
 
-        if (command.equals("phonebook")) {
+        if (command.equals("phonebook.do")) {
             action = new ListPhoneBook();
             try {
                 actionForward = action.execute(request, response);
@@ -138,7 +139,7 @@ public class MyPageController extends HttpServlet {
         System.out.println("requestURI : " + requestURI);
         System.out.println("contextPath : " + contextPath);
 
-        String command = requestURI.substring("/mypage/".length());
+        String command = requestURI.substring((contextPath + "/mypage/").length());
 
         ActionForward actionForward = new ActionForward();
 
@@ -154,7 +155,7 @@ public class MyPageController extends HttpServlet {
             }
         }
 
-        if (command.equals("annual-leave")) {
+        if (command.equals("annual-leave.do")) {
             action = new listAnnualLeave();
             try {
                 actionForward = action.execute(request, response);
@@ -198,7 +199,7 @@ public class MyPageController extends HttpServlet {
             }
         }
 
-        if (command.equals("phonebook")) {
+        if (command.equals("phonebook.do")) {
             action = new ListPhoneBook();
             try {
                 actionForward = action.execute(request, response);
@@ -251,4 +252,3 @@ public class MyPageController extends HttpServlet {
         }
     }
 }
-

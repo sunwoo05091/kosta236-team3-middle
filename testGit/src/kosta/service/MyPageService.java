@@ -1,6 +1,7 @@
 package kosta.service;
 
-import kosta.domain.MyPage.*;
+import kosta.domain.*;
+import kosta.domain.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
