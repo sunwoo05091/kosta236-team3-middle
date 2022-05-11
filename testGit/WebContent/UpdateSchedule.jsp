@@ -94,6 +94,11 @@
 	<li><a href="insertForm.do"><button type="button" class="btn btn-outline-primary">일정 생성</button></a></li><br>
 	<li><a href="listAction.do"><button type="button" class="btn btn-outline-primary">일정 조회</button></a></li>
 </ul>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="#">Home</a></li>
+  <li class="breadcrumb-item"><a href="#">Library</a></li>
+  <li class="breadcrumb-item active">Data</li>
+</ol>
 <div id="header" style="border: 1px solid;width: 700px; height: 500px;margin-left: 450px; margin-top: 50px;
 padding-left: 10px;padding-top: 30px">
 <form action="updateAction.do" method="post">
