@@ -10,7 +10,6 @@ public class Emp implements Serializable{
 	private String phone_number;
 	private String hiredate;
 	private String sign;
-	private int basepay;
 	private int c_no;
 	private int d_no;
 	private String grade;
@@ -19,7 +18,7 @@ public class Emp implements Serializable{
 	public Emp() {}
 
 	public Emp(int e_no, String id, String pass, String name, String phone_number, String hiredate, String sign,
-			int basepay, int c_no, int d_no, String grade, int signupcheck) {
+			int c_no, int d_no, String grade, int signupcheck) {
 		super();
 		this.e_no = e_no;
 		this.id = id;
@@ -28,18 +27,9 @@ public class Emp implements Serializable{
 		this.phone_number = phone_number;
 		this.hiredate = hiredate;
 		this.sign = sign;
-		this.basepay = basepay;
 		this.c_no = c_no;
 		this.d_no = d_no;
 		this.grade = grade;
-		this.signupcheck = signupcheck;
-	}
-
-	public int getSignupcheck() {
-		return signupcheck;
-	}
-
-	public void setSignupcheck(int signupcheck) {
 		this.signupcheck = signupcheck;
 	}
 
@@ -99,14 +89,6 @@ public class Emp implements Serializable{
 		this.sign = sign;
 	}
 
-	public int getBasepay() {
-		return basepay;
-	}
-
-	public void setBasepay(int basepay) {
-		this.basepay = basepay;
-	}
-
 	public int getC_no() {
 		return c_no;
 	}
@@ -130,6 +112,14 @@ public class Emp implements Serializable{
 	public void setGrade(String grade) {
 		this.grade = grade;
 	}
-	
+
+	public int getSignupcheck() {
+		return signupcheck;
+	}
+
+	public void setSignupcheck(int signupcheck) {
+		this.signupcheck = signupcheck;
+	}
+
 	
 }

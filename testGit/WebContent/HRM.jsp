@@ -85,7 +85,6 @@
       <th class = "th_name" scope="col">이름</th>
       <th class = "th_p_no" scope="col">전화번호</th>
       <th class = "th_hiredate" scope="col">입사일자</th>
-      <th class = "th_basepay" scope="col">기본급</th>
       <th class = "th_d_no" scope="col">부서</th>
       <th class = "th_grade" scope="col">직급</th>
       <th class = "th_approve" scope="col">승인</th>
@@ -103,13 +102,6 @@
 				<input type = "hidden" name = "e_no" value = "${emp.e_no }">
 		      <td>
 				<input type="text" id="datePicker" class="form-control" value="" name = "hiredate">
-				</td>
-		      <td>
-  					<div class="form-group">
-    					<div class="input-group mb-3">
-    			  			<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name = "basepay">
-    					</div>
-					</div>
 				</td>
 		      <td>    
 		      <div class="form-group">

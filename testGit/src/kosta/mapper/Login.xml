@@ -35,7 +35,7 @@
 	</select>
 	
 	<update id = "updateEmp" parameterType = "Emp">
-		update emp set hiredate = #{hiredate}, basepay= #{basepay}, d_no = #{d_no}, grade = #{grade}, signupcheck = #{signupcheck} 
+		update emp set hiredate = #{hiredate}, d_no = #{d_no}, grade = #{grade}, signupcheck = #{signupcheck} 
 		where e_no = #{e_no}	
 	</update>
 	
