@@ -84,9 +84,11 @@
 				<foreach collection="area" item="item" separator="OR" open="(" close=")">
 					${item} LIKE #{searchKey}
 				</foreach>
-				and cm_category = '중고거래' 
 			</where>
 		  </if>
+		  <where>
+		  	and cm_category = '중고거래'
+		  </where>
 	</select>
 	
 	<select id="countClub" resultType="int">

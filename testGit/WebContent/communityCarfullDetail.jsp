@@ -53,6 +53,7 @@
 	}
 	
 	.bottom_box{
+		margin-left: 850px;
 	}
 	
 	p{
@@ -118,6 +119,18 @@
   </div>
 </nav>
 <ul class="nav nav-pills flex-column">
+	<li>
+		<div class="card bg-light mb-3" style="max-width: 20rem;">
+		  <div class="card-body">
+		    <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="130" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+    			<rect width="100%" height="100%" fill="#868e96"></rect>
+    			<text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+  			</svg>
+  			<br>
+		    <div class="card-text" style="color: #7b95cc;"><div>인사부서</div><div>${emp.grade } ${emp.name }님</div></div>
+		  </div>
+		</div>
+	</li>
   <li class="nav-item">
     <a class="nav-link" href="listCommunityAction.do">중고거래게시판</a>
   </li>
@@ -134,6 +147,10 @@
   <li class="breadcrumb-item active">${community.cm_title }</li>
 </ol>
 	<div class="ContentBox">
+		<div class="bottom_box">
+			<a class="badge bg-success" href="updateTradeForm.do?cm_no=${community.cm_no}">글수정</a>
+			<a class="badge bg-warning" href="deleteTrade.do?cm_no=${community.cm_no}">글삭제</a>
+		</div>
 			<c:if test="${community.cm_fname != null }">
 				<c:set var="head" value="${fn:substring(community.cm_fname, 
 										0, fn:length(community.cm_fname)-4) }"></c:set>
@@ -174,14 +191,6 @@
 			</textarea><br>
 			<input class="btn btn-outline-success" type="submit" value="댓글쓰기" style="margin-left: 700px; "> 
 		</form>
-		
-	
-	</div>
-	
-	
-	<div class="bottom_box">
-		<a href="updateCarfullForm.do?cm_no=${community.cm_no}">글수정</a>
-		<a href="deleteTrade.do?cm_no=${community.cm_no}">글삭제</a>
 	</div>
 	</div>
 </body>
