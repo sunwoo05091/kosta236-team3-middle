@@ -1,0 +1,38 @@
+
+d	java:S116"PRename this field "an_no" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ä¦
+i	java:S116"ORename this field "e_no" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÂéÀÊûÿÿÿÿ
+k	java:S116	"VRename this field "an_distinct" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­Áá×
+k	java:S116
+"WRename this field "an_deduction" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œšÁ
+l	java:S116"WRename this field "an_startDate" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆÉž
+o	java:S116"URename this field "an_endDate" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›û‡ðûÿÿÿÿ
+n	java:S116"YRename this field "an_acknowledge" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡¬ŽØ
+h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õ á”ýÿÿÿÿ
+h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ð®£Ïúÿÿÿÿ
+h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Žƒ¤ëüÿÿÿÿ
+h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ï²ÎÊûÿÿÿÿ
+c	java:S100 "NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ£Ò»
+h	java:S100$"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(îöëÿýÿÿÿÿ
+h	java:S100("NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬å¸…ýÿÿÿÿ
+h	java:S100,"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§ùŠ¥üÿÿÿÿ
+h	java:S1000"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûÊÛ³ûÿÿÿÿ
+N
+java:S11176"8Rename "an_no" which hides the field declared at line 7.(¿ªØ¶
+Y
+java:S1117:">Rename "an_distinct" which hides the field declared at line 9.(àÙðëûÿÿÿÿ
+[
+java:S1117;"@Rename "an_deduction" which hides the field declared at line 10.(¿ŸÖÏýÿÿÿÿ
+[
+java:S1117<"@Rename "an_startDate" which hides the field declared at line 11.(–­Ñ·ûÿÿÿÿ
+T
+java:S1117=">Rename "an_endDate" which hides the field declared at line 12.(î” 
+]
+java:S1117>"BRename "an_acknowledge" which hides the field declared at line 13.(˜™Ì´úÿÿÿÿ
+k	java:S117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§ùŠ¥üÿÿÿÿ
+k	java:S1170"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûÊÛ³ûÿÿÿÿ
+f	java:S1176"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿ªØ¶
+k	java:S117:"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÙðëûÿÿÿÿ
+k	java:S117;"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿ŸÖÏýÿÿÿÿ
+k	java:S117<"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–­Ñ·ûÿÿÿÿ
+f	java:S117="QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(î” 
+k	java:S117>"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜™Ì´úÿÿÿÿ
