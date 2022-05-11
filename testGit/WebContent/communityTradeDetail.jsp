@@ -78,12 +78,16 @@
 		font-size: 30px;
 		color : #fb6400;
 	}
+	
+	a{
+		text-decoration: none;
+	}
 </style>
 </head>
 <body background="ECF1F8">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">StarWorks</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -91,33 +95,28 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Home
+          <a class="nav-link active" href="mainAction.do">홈
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="/testGit/document/listAction.do">전자결제</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="/testGit/schedule/moveSchedule.do">일정관리</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="/testGit/Meetingroom/listNoticeAction.do">공지사항</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" href="/testGit/community/listCommunityAction.do">커뮤니티</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">마이페이지</a>
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+          <a class="nav-link" href="logOutAction.do" id = "logout">로그아웃</a>
       </form>
     </div>
   </div>
@@ -135,15 +134,10 @@
   
 </ul>
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="#">Home</a></li>
-  <li class="breadcrumb-item"><a href="#">Library</a></li>
-  <li class="breadcrumb-item active">Data</li>
+  <li class="breadcrumb-item"><a href="#">중고거래게시판</a></li>
+  <li class="breadcrumb-item"><a href="#">${community.cm_title }</a></li>
 </ol>
-	<h2>글세부보기</h2>
-	
-	
 	<div class="ContentBox">
-		<h3>${community.cm_title }</h3>
 			<c:if test="${community.cm_fname != null }">
 				<c:set var="head" value="${fn:substring(community.cm_fname, 
 										0, fn:length(community.cm_fname)-4) }"></c:set>

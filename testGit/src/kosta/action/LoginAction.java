@@ -19,7 +19,6 @@ public class LoginAction implements Action{
 		
 		//비즈니스 호출
 		Emp emp = service.loginService(request);
-		
 		if(emp == null) {
 			forward.setPath("loginFormAction.do?loginfail=1");
 			forward.setRedirect(true);//redirect

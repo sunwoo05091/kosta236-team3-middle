@@ -63,7 +63,11 @@
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
   --bs-body-color: #7b8ab8;
+<<<<<<< HEAD
+  --bs-body-bg: #fff; 
+=======
   --bs-body-bg: #ECF1F8;
+>>>>>>> branch 'sub3' of https://github.com/sunwoo05091/kosta236-team3-middle.git
 }
 
 *,
@@ -12273,4 +12277,21 @@ fieldset:disabled .btn {
 }
 #short-sidebar{
 	height : 300px;
+}
+#mainLogo{
+	margin-top : 120px;
+	margin-left : 60px;
+	font-size:4rem;
+}
+#mainLogoSpan{
+	margin-top:100px;
+	margin-right:200px;
+	padding : 20px;
+	width : 200px;
+	height : 200px;
+	font-size:4rem;
+}
+#workcheckbtn{
+	font-size:0.8rem;
+	padding:2px;
 }

@@ -26,7 +26,7 @@
 <body onload = "printClock()">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">StarWorks</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,38 +34,28 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="mainAction.do">홈
+          <a class="nav-link active" href="/testGit/Login/mainAction.do">홈
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">전자결제</a>
+          <a class="nav-link" href="/testGit/document/listAction.do">전자결제</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">일정관리</a>
+          <a class="nav-link" href="/testGit/schedule/moveSchedule.do">일정관리</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">공지사항</a>
+          <a class="nav-link" href="/testGit/Meetingroom/listNoticeAction.do">공지사항</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">커뮤니티</a>
+          <a class="nav-link" href="/testGit/community/listCommunityAction.do">커뮤니티</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">마이페이지</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
-        </li>
       </ul>
       <form class="d-flex">
-          <a class="nav-link" href="logOutAction.do" id = "logout">로그아웃</a>
+          <a class="nav-link" href="/testGit/Login/logOutAction.do" id = "logout">로그아웃</a>
       </form>
     </div>
   </div>
@@ -79,7 +69,8 @@
     			<text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
   			</svg>
   			<br>
-		    <div class="card-text"><div>${d_name }부서</div><div>${emp.name }님</div></div></div></div>
+		    <div class="card-text"><div>${d_name }부서</div><div>${emp.grade } ${emp.name }님</div></div></div></div>
+	</li>
 </ul>
 <ol class="breadcrumb">
   <li class="breadcrumb-item"><a href="mainAction.do">홈</a></li>
@@ -94,7 +85,6 @@
       <th class = "th_name" scope="col">이름</th>
       <th class = "th_p_no" scope="col">전화번호</th>
       <th class = "th_hiredate" scope="col">입사일자</th>
-      <th class = "th_basepay" scope="col">기본급</th>
       <th class = "th_d_no" scope="col">부서</th>
       <th class = "th_grade" scope="col">직급</th>
       <th class = "th_approve" scope="col">승인</th>
@@ -112,13 +102,6 @@
 				<input type = "hidden" name = "e_no" value = "${emp.e_no }">
 		      <td>
 				<input type="text" id="datePicker" class="form-control" value="" name = "hiredate">
-				</td>
-		      <td>
-  					<div class="form-group">
-    					<div class="input-group mb-3">
-    			  			<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name = "basepay">
-    					</div>
-					</div>
 				</td>
 		      <td>    
 		      <div class="form-group">

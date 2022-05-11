@@ -33,7 +33,7 @@
 <body background="ECF1F8">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">StarWorks</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -41,33 +41,28 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Home
+          <a class="nav-link active" href="mainAction.do">홈
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="/testGit/document/listAction.do">전자결제</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="/testGit/schedule/moveSchedule.do">일정관리</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="/testGit/Meetingroom/listNoticeAction.do">공지사항</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" href="/testGit/community/listCommunityAction.do">커뮤니티</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">마이페이지</a>
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+          <a class="nav-link" href="logOutAction.do" id = "logout">로그아웃</a>
       </form>
     </div>
   </div>
@@ -85,12 +80,9 @@
   
 </ul>
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="#">Home</a></li>
-  <li class="breadcrumb-item"><a href="#">Library</a></li>
-  <li class="breadcrumb-item active">Data</li>
+  <li class="breadcrumb-item"><a href="#">중고거래게시판</a></li>
 </ol>
-<h3>중고거래게시판</h3>
-	<a href="insertNoticeTradeFormAction.do" style="margin-left: 1412px;" class="badge bg-warning" >공지 등록</a><br>
+<a href="insertNoticeTradeFormAction.do" style="margin-left: 1430px;" class="badge bg-warning" >공지 등록</a><br>
 <table class="table table-hover" style="width :70%; margin-left: 350px; text-align: center;">
   <colgroup>
   	<col width="50px">
@@ -112,7 +104,7 @@
 		<tr class="table-danger">
 			<td>${notice.cm_no}</td>
 			<td><a style="font: red;"
-				href="detailTradeAction.do?cm_no=${notice.cm_no}">[공지]${notice.cm_title }</a></td>
+				href="detailClubAction.do?cm_no=${notice.cm_no}">[공지]${notice.cm_title }</a></td>
 			<td><fmt:parseDate var="dt" value="${notice.cm_date }"
 					pattern="yyyy-MM-dd HH:mm:ss" /> <fmt:formatDate value="${dt }"
 					pattern="yyyy/MM/dd" /></td>
@@ -134,7 +126,7 @@
 	</c:forEach>
   </tbody>
 </table>
-	<a class="badge bg-success" href="insertCommunityTradeFormAction.do" style="margin-left: 1625px;">글쓰기</a>
+	<a class="badge bg-success" href="insertCommunityTradeFormAction.do" style="margin-left: 1450px;">글쓰기</a> 
 	<br><br>
 	<!-- 페이징 처리 부분 -->
 	

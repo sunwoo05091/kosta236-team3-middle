@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="jsp-api">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../server/apache-tomcat-9.0.60/lib/jsp-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../server/apache-tomcat-9.0.60/lib/jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../server/apache-tomcat-9.0.60/lib/mybatis-3.2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../server/apache-tomcat-9.0.60/lib/ojdbc6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../server/apache-tomcat-9.0.60/lib/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../server/apache-tomcat-9.0.60/lib/standard.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../server/apache-tomcat-9.0.60/lib/cos.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
