@@ -19,7 +19,13 @@
 <link rel = "stylesheet" href="Resource/CSS/bootstrap.min.css" type = "text/css">
 <link rel = "stylesheet" href="Resource/CSS/bootstrap.css" type = "text/css">
 <link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/main.css" type="text/css">
-
+<link rel = "stylesheet" href="${pageContext.request.contextPath}/Resource/CSS/schedule.css" type="text/css">
+<style type="text/css">
+   .pageBox{
+      width: 700px;
+      margin-left: 430px;
+   }
+</style>
 </head>
 <body background="ECF1F8">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -59,19 +65,42 @@
   </div>
 </nav>
 
+
 <ul class="nav nav-pills flex-column" style="position: absolute;">
-	<li><a href="moveSchedule.do"><button type="button" class="btn btn-outline-primary">홈 </button></a></li><br>
-	<li><a href="insertForm.do"><button type="button" class="btn btn-outline-primary">일정 생성</button></a></li><br>
-	<li><a href="listAction.do"><button type="button" class="btn btn-outline-primary">전체 조회</button></a></li>
-	<hr style="border: solid 1px gray;">
+	<div class="card bg-light mb-3" style="max-width: 20rem;">
+		  <div class="card-body">
+		    <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="130" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+    			<rect width="100%" height="100%" fill="#868e96"></rect>
+    			<text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+  			</svg>
+  			<br>
+		    <div class="card-text"><div>인사 부서</div><div>${emp.grade } ${emp.name }님</div></div>
+		  </div>
+	</div>
+  <li class="nav-item">
+    <a class="nav-link active" href="moveSchedule.do">개인 일정</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="insertForm.do">일정 생성</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="listAction.do">일정 조회</a>
+  </li>
+  <hr style="border: solid 1px gray;">
 	<li>분류별 일정</li><br>
-	<li style="text-decoration: none;"><a href="TypeScheduleAction.do?s_type=1">- 개인</a></li><br>
-	<li style="text-decoration: none;"><a href="TypeScheduleAction.do?s_type=2">- 미팅</a></li><br>
-	<li style="text-decoration: none;"><a href="TypeScheduleAction.do?s_type=3">- 회의</a></li><br>
+	<li style="text-decoration: none;"><a href="TypeScheduleAction.do?s_type=1" id="tag">- 개인</a></li><br>
+	<li style="text-decoration: none;"><a href="TypeScheduleAction.do?s_type=2" id="tag">- 미팅</a></li><br>
+	<li style="text-decoration: none;"><a href="TypeScheduleAction.do?s_type=3" id="tag">- 회의</a></li><br>
 </ul>
 
- <table class="w3-table w3-striped w3-bordered" style="position: relative; width: 1000px; margin-left: 300px;">
-    	<tr>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="moveSchedule.do" id="tag">홈</a></li>
+  <li class="breadcrumb-item"><a href="insertForm.do" id="tag">일정 생성</a></li>
+  <li class="breadcrumb-item active"><a href="listAction.do" id="tag" >전체 조회<a></a></li>
+</ol>
+
+ <table class="table table-hover" style="position: relative; width: 1000px; margin-left: 300px;">
+    	<tr class="table-dark">
     		<td>번호
     		<td>제목
     		<td>시작일
@@ -80,8 +109,8 @@
     		<td>상태
     	</tr>
     	<c:forEach var="schedule" items="${ScheduleListModel.list }">
-    	<tr>
-    		<td><a href="scheduleDetailAction.do?s_no=${schedule.s_no}">${schedule.s_no }</a></td>
+    	<tr class="table-light">
+    		<td><a href="scheduleDetailAction.do?s_no=${schedule.s_no}" style="text-decoration: none;">${schedule.s_no }</a></td>
     		<td>${schedule.s_title }</td>
     		
     		<td>
@@ -97,31 +126,33 @@
     	</tr>
     	</c:forEach>
     </table>
-    <br>
-    
-<div style="margin-left: 750px;">    
-	<c:if test="${ScheduleListModel.startPage >= 6 }">
-		<a href="SchedulePageAction.do?pageNum=${ScheduleListModel.startPage-1 }">[이전]</a>
+<div class="pageBox">
+ <ul  class="pagination">
+		<c:if test="${ScheduleListModel.startPage >= 6 }">
+	<li class="page-item active">
+		<a href="SchedulePageAction.do?pageNum=${ScheduleListModel.startPage-1 }"class="page-link">이전</a>
+	</li>
 	</c:if>
 	
 	<c:forEach var="pageNo" begin="${ScheduleListModel.startPage }" end="${ScheduleListModel.endPage }">
 		<c:if test="${ScheduleListModel.requestPage == pageNo }"><b></c:if>
-			<a href="SchedulePageAction.do?pageNum=${pageNo }">[${pageNo }]</a>
+		<li class="page-item active">
+			<a href="SchedulePageAction.do?pageNum=${pageNo }" style="text-decoration: none;">${pageNo }&nbsp&nbsp</a>
+		</li>
 		<c:if test="${ScheduleListModel.requestPage == pageNo }"></b></c:if>
 	</c:forEach>
 	<c:if test="${ScheduleListModel.endPage <  ScheduleListModel.totalPage}">
-		<a href="SchedulePageAction.do?pageNum=${ScheduleListModel.endPage + 1 }">[]이후]</a>
+	<li class="page-item active">	
+		<a href="SchedulePageAction.do?pageNum=${ScheduleListModel.endPage + 1 }">이후</a>
+	</li>
 	</c:if>
-	</div>	
-
         <c:if test="${ScheduleListModel.endPage < ScheduleListModel.totalPage}">
             <li class="page-item">
                 <a class="page-link" href="SchedulePageAction.do?pageNum=${ScheduleListModel.endPage + 1}">&raquo;</a>
             </li>
         </c:if>
-  
-
+       </ul>
+      </div>
     <br>
-
   </body>
 </html>
