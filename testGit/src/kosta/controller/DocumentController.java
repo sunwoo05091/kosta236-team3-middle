@@ -15,6 +15,7 @@ import kosta.action.DeleteDocumentAction;
 import kosta.action.DetailDocumentAction;
 import kosta.action.InsertDocumentAction;
 import kosta.action.InsertDocumentFormAction;
+import kosta.action.InsertSignEmpAction;
 import kosta.action.ListDocumentAction;
 import kosta.action.ListDocumentSignCompanionAction;
 import kosta.action.ListDocumentSignCompleteAction;
@@ -142,8 +143,17 @@ public class DocumentController extends HttpServlet {
        	    } catch (Exception e) {
        	    	e.printStackTrace();
        	    }
+       	    
+        // 결재선 추가
+        if (command.equals("insertSignEmpAction.do")) {
+        	action = new InsertSignEmpAction();
+        try {
+    			forward = action.execute(request, response);
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    	}
              		
-        		
+        }
         		
 		}
     	
@@ -151,7 +161,7 @@ public class DocumentController extends HttpServlet {
     	
     	
     	
-    	// 전체적인 이동에 관한 코드
+     // 전체적인 이동에 관한 코드
     	if (forward != null) {
 			if (forward.isRedirect()) {		// redirect
 				response.sendRedirect(forward.getPath());
