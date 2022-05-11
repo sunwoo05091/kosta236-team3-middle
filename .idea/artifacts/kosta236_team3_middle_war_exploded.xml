@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="kosta236-team3-middle:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/kosta236_team3_middle_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="kosta236-team3-middle/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="kosta236-team3-middle" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

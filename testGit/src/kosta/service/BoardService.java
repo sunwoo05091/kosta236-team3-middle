@@ -230,14 +230,46 @@ public class BoardService {
 	}
 	
 	public int updateBoardService(HttpServletRequest request)throws Exception{
+
+		
 		request.setCharacterEncoding("utf-8");
+		String uploadPath = request.getRealPath("upload");
+		int size = 20 * 1024 * 1024;
+		
+		
+		MultipartRequest multi = new MultipartRequest(request, uploadPath, size, "utf-8", new DefaultFileRenamePolicy());
+		
 		Board board = new Board();
-		board.setB_no(Integer.parseInt(request.getParameter("b_no")));
-		board.setB_title(request.getParameter("b_title"));
-		board.setB_contents(request.getParameter("b_contents"));
+		board.setB_no(Integer.parseInt(multi.getParameter("b_no")));
+		board.setB_title(multi.getParameter("b_title"));
+		board.setB_contents(multi.getParameter("b_contents"));
+		board.setB_fname(null);
+		
+		if(multi.getFilesystemName("b_fname")!= null) { 
+			String b_fname = multi.getFilesystemName("b_fname"); 
+			board.setB_fname(b_fname); 
+			
+			String pattern = b_fname.substring(b_fname.indexOf(".")+1); 
+			String head = b_fname.substring(0,b_fname.indexOf("."));
+			
+			
+			String imagePath = uploadPath + "\\" + b_fname;
+			File src = new File(imagePath); 
+			
+			
+			String thumPath = uploadPath + "\\" + head + "_small." + pattern;
+			File dest = new File(thumPath); 
+			
+			if(pattern.equals("gif") || pattern.equals("jpg") || pattern.equals("png")) { 
+				ImageUtil.resize(src, dest, 100, ImageUtil.RATIO);
+			}
+		}
+
 		
 		return dao.updateBoard(board);
 	}
+		
+
 	
 	public int deleteBoardService(int b_no)throws Exception{
 		return dao.deleteBoard(b_no);

@@ -12,7 +12,9 @@
 	</insert>
 
 <select id="listReserve" resultType="Reserve">
-	select * from reserve
+
+	select * from reserve order by r_no desc
+
 
 </select>
 

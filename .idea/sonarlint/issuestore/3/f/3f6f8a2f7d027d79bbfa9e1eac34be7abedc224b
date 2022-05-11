@@ -1,0 +1,32 @@
+
+d	java:S116"ORename this field "p_No" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕÿŸö
+d	java:S116"ORename this field "e_No" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò„“Î
+f	java:S116"QRename this field "p_Date" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©Ååâ
+i	java:S116"TRename this field "p_BasePay" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–´Öö
+m	java:S116"SRename this field "p_NetPay" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–Þªªÿÿÿÿÿ
+<
+java:S1170"!Make this final field static too.(óùÁ¢øÿÿÿÿ
+<
+java:S1170	"!Make this final field static too.(ªÎÒ˜ÿÿÿÿÿ
+7
+java:S1170
+"!Make this final field static too.(©ëáí
+7
+java:S1170"!Make this final field static too.(â¡’û
+7
+java:S1170"!Make this final field static too.(ÌÐžô
+7
+java:S1170"!Make this final field static too.(“àðÿ
+V	java:S125)"<This block of commented-out lines of code should be removed.(Ê‰‰Ðùÿÿÿÿ
+h	java:S100;"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Èëßôûÿÿÿÿ
+h	java:S100?"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡Íššúÿÿÿÿ
+h	java:S100C"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(îøî˜ùÿÿÿÿ
+c	java:S100G"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨é†—
+c	java:S100w"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨“âê
+e	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒåÆ1
+e	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒåÆ1
+e	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒåÆ1
+e	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒåÆ1
+k	java:S1171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢å¹Žþÿÿÿÿ
+X
+java:S21843"BCast one of the operands of this addition operation to a "double".(Ùã”¨

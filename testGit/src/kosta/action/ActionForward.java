@@ -1,32 +1,24 @@
 package kosta.action;
 
 public class ActionForward {
-	private boolean isRedirect;
-	private String path;
-	
-	public ActionForward() {}
 
-	public ActionForward(boolean isRedirect, String path) {
-		super();
-		this.isRedirect = isRedirect;
-		this.path = path;
-	}
+    private boolean isRedirect;
+    private String path;
 
-	public boolean isRedirect() {
-		return isRedirect;
-	}
+    public boolean isRedirect() {
+        return isRedirect;
+    }
 
-	public void setRedirect(boolean isRedirect) {
-		this.isRedirect = isRedirect;
-	}
+    public void setRedirect(boolean redirect) {
+        isRedirect = redirect;
+    }
 
-	public String getPath() {
-		return path;
-	}
+    public String getPath() {
+        return path;
+    }
 
-	public void setPath(String path) {
-		this.path = path;
-	}
-	
-	
+    public void setPath(String path) {
+        this.path = path;
+    }
+
 }
